@@ -22,7 +22,7 @@ const Slider = () => {
       max: 5,
     },
     breakpoints: {
-      "(min-width: 400px)": {
+      "(min-width: 450px)": {
         slides: { perView: 2.2, spacing: 5 },
         loop: true,
         mode: "free",

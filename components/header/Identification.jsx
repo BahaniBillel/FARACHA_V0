@@ -3,12 +3,13 @@ import { SiHomeassistantcommunitystore } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
 import { CiLogin } from "react-icons/ci";
 import { BsHeart, BsBasket, BsSearch } from "react-icons/bs";
+import Link from "next/link";
 
 function Identification() {
   return (
     <div className="bg-white h-16 shadow-md md:px-14 items-center justify-center flex flex-row md:space-x-6">
       <div className="text-xl text-slate-900 tracking-widest font-bold ">
-        FARACHA
+        <Link href="/">FARACHA</Link>
       </div>
       <div className="relative flex flex-row justify-center items-center">
         <input
