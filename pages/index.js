@@ -1,7 +1,9 @@
 import Head from "next/head";
+import Header from "../components/header/Header";
 import Identification from "../components/header/Identification";
 import Navigation from "../components/header/Navigation";
 import UpperRibbon from "../components/header/UpperRibbon";
+import Hero from "../components/hero/Hero";
 
 export default function Home() {
   return (
@@ -13,9 +15,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <UpperRibbon />
-        <Identification />
-        <Navigation />
+        <Header />
+        <Hero />
       </main>
     </div>
   );

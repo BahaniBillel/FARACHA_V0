@@ -3,6 +3,7 @@ import { links } from "./MyLinks";
 import DropDownList from "./DropDownList";
 import Link from "next/link";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { GiButterfly } from "react-icons/gi";
 
 function BottomHeader() {
   const [heading, setHeading] = useState(false);
@@ -13,7 +14,7 @@ function BottomHeader() {
   };
 
   return (
-    <div className="overflow-scroll md:overflow-visible   md:flex flex-row items-center justify-center py-2 px-2  bg-black relative ">
+    <div className="overflow-scroll md:overflow-visible   md:flex flex-row items-center justify-center py-2 px-2  bg-black relative z-40">
       <div className="flex flex-row space-x-6 text-sm text-darkGray ml-2 ">
         {links.map((link, i) => (
           <div key={link.name} className="navlink group">
@@ -27,7 +28,7 @@ function BottomHeader() {
               {link.name}
 
               <span className="hidden md:block">
-                <BsChevronDown className="text-darkGray h-4 navlink  group-hover:rotate-180" />
+                <GiButterfly className="text-darkGray h-4 navlink  group-hover:rotate-180 text-pink-400 group-hover:text-emerald-300 " />
               </span>
             </h1>
 

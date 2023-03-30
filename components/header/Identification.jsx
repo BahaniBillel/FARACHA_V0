@@ -37,13 +37,6 @@ function Identification() {
         </ul>
         <ul className="flex flex-row space-x-4 md:space-x-8 ">
           <li className="flex flex-row items-center cursor-pointer">
-            <CiLogin className="w-6 h-6 text-gray-800" />
-            <p className="hidden md:flex text-sm font-light ml-1 flex-col">
-              Login
-              <span className="text-xs text-gray-400">Enter your space</span>
-            </p>
-          </li>
-          <li className="flex flex-row items-center cursor-pointer">
             <BsHeart className="w-6 h-6 text-gray-800" />
             <p className="hidden md:flex text-sm font-light ml-1 flex-col">
               LogIn
@@ -53,6 +46,13 @@ function Identification() {
             <BsBasket className="w-6 h-6 text-gray-800" />
             <p className="hidden md:flex text-sm font-light ml-1 flex-col">
               Basket
+            </p>
+          </li>
+          <li className="flex flex-row items-center cursor-pointer">
+            <CiLogin className="w-6 h-6 text-gray-800" />
+            <p className="hidden md:flex text-sm font-light ml-1 flex-col">
+              Login
+              <span className="text-xs text-gray-400">Enter your space</span>
             </p>
           </li>
         </ul>
