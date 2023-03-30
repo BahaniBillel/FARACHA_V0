@@ -50,7 +50,7 @@ const Slider = () => {
       <div ref={sliderRef} className="keen-slider ">
         {Images.map((el) => (
           <div className="keen-slider__slide " key={el}>
-            <Image src={el} alt="/" />
+            <Image src={el} alt="/" priority={true} />
           </div>
         ))}
       </div>
