@@ -115,9 +115,10 @@ function ProductsShowCase({ title, haveLabel }) {
           },
         }}
       >
-        {products.map((product) => (
+        {products.map((product, index) => (
           <SwiperSlide>
             <Product01
+              key={index}
               image={product.image}
               price={product.price}
               title={product.title}

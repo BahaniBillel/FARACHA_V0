@@ -5,7 +5,7 @@ import Navigation from "../components/header/Navigation";
 import UpperRibbon from "../components/header/UpperRibbon";
 import Hero from "../components/hero/Hero";
 import SliderSwiper from "../components/hero/SliderSwiper";
-import ChosenForYou from "../components/products/ChosenForYou";
+import ProductSliderSmall from "../components/products/ProductSliderSmall";
 
 export default function Home() {
   return (
@@ -20,8 +20,8 @@ export default function Home() {
         <Header />
         <Hero />
         {/* <SliderSwiper /> */}
-        <ChosenForYou title="Chosen for you" />
-        <ChosenForYou title="Just Dropped" haveLabel={true} />
+        <ProductSliderSmall title="Chosen for you" />
+        <ProductSliderSmall title="Just Dropped" haveLabel={true} />
       </main>
     </div>
   );
