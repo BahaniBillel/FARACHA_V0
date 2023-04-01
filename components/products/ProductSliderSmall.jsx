@@ -95,7 +95,7 @@ function ProductsShowCase({ title, haveLabel }) {
         freeMode={true}
         pagination={{
           clickable: true,
-          type: "fraction",
+          dynamicBullets: true,
         }}
         modules={[FreeMode, Pagination, Navigation]}
         className="mySwiper"
