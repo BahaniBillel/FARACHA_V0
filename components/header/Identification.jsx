@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function Identification() {
   return (
-    <div className="bg-white h-16 shadow-md md:px-14 items-center justify-center flex flex-row md:space-x-6">
+    <div className="bg-white h-28 shadow-md md:px-14 items-center justify-center flex flex-row md:space-x-6">
       <div className="text-xl text-slate-900 tracking-widest font-bold ">
         <Link href="/">FARACHA</Link>
       </div>
