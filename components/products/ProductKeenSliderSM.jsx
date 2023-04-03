@@ -7,7 +7,7 @@ import ProductImage from "../../images/gelato.webp";
 import Product01 from "./Product01";
 import Modal from "../usables/Modal";
 
-export default ({ title, haveLabel, data, bottomLine }) => {
+const ProductKeenSliderSM = ({ title, haveLabel, data, bottomLine }) => {
   const [loaded, setLoaded] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -62,7 +62,7 @@ export default ({ title, haveLabel, data, bottomLine }) => {
             <h2 className="px-2 mb-5 font-semibold text-xl ">{title}</h2>
             <div ref={sliderRef} className="keen-slider">
               {data.map((product) => (
-                <div className="keen-slider__slide py-10 ">
+                <div className="keen-slider__slide py-10 " key={product.image}>
                   <Product01
                     image={product.image}
                     title={product.title}
@@ -109,6 +109,8 @@ export default ({ title, haveLabel, data, bottomLine }) => {
     </div>
   );
 };
+
+export default ProductKeenSliderSM;
 
 function Arrow(props) {
   const disabeld = props.disabled ? " arrow--disabled" : "";

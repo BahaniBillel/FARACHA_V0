@@ -5,7 +5,7 @@ import "keen-slider/keen-slider.min.css";
 // Components
 import Product02 from "./Product02";
 
-export default ({ title, haveLabel, data }) => {
+const ProductKeenSlider = ({ title, haveLabel, data }) => {
   const [loaded, setLoaded] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -40,7 +40,7 @@ export default ({ title, haveLabel, data }) => {
             <h2 className="px-2 mb-5 font-semibold text-xl ">{title}</h2>
             <div ref={sliderRef} className="keen-slider">
               {data.map((product) => (
-                <div className="keen-slider__slide py-10 ">
+                <div className="keen-slider__slide py-10 " key={product.image}>
                   <Product02
                     image={product.image}
                     title={product.title}
@@ -80,6 +80,7 @@ export default ({ title, haveLabel, data }) => {
   );
 };
 
+export default ProductKeenSlider;
 function Arrow(props) {
   const disabeld = props.disabled ? " arrow--disabled" : "";
   return (
