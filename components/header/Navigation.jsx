@@ -14,7 +14,7 @@ function BottomHeader() {
   };
 
   return (
-    <div className="overflow-scroll md:overflow-visible   md:flex flex-row items-center justify-center py-2 px-2 bg-gray-100  md:bg-black relative z-40">
+    <div className="overflow-scroll lg:overflow-visible   md:flex flex-row items-center justify-center py-2 px-2 bg-gray-100  md:bg-black relative z-40">
       <div className="flex flex-row space-x-6 text-sm text-darkGray ml-2 ">
         {links.map((link, i) => (
           <div key={link.name} className="navlink group">

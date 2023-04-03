@@ -20,7 +20,7 @@ function Identification() {
         <BsSearch className="w-4 h-4 text-gray-500 absolute left-2" />
       </div>
       <div className="flex flex-row md:space-x-5">
-        <ul className="hidden md:flex flex-row space-x-8 border-r border-gray-300 pr-5">
+        <ul className="hidden lg:flex flex-row space-x-8 border-r border-gray-300 pr-5">
           <li className="flex flex-row items-center cursor-pointer">
             <SiHomeassistantcommunitystore className="w-6 h-6 text-gray-800" />
             <p className="hidden md:flex text-sm font-light ml-1 flex-col">
@@ -53,7 +53,9 @@ function Identification() {
             <CiLogin className="w-6 h-6 text-gray-800" />
             <p className="hidden md:flex text-sm font-light ml-1 flex-col">
               Login
-              <span className="text-xs text-gray-400">Enter your space</span>
+              <span className="text-xs text-gray-400 hidden lg:block">
+                Enter your space
+              </span>
             </p>
           </li>
         </ul>
