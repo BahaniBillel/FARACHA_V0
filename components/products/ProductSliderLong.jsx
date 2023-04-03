@@ -12,21 +12,22 @@ import "swiper/css/navigation";
 import { FreeMode, Navigation, Pagination } from "swiper";
 
 // Images
-import Product01 from "./Product01";
-import promo1 from "../../images/gelato.webp";
-import promo2 from "../../images/lip-butter-lamp.webp";
-import promo3 from "../../images/lancome.webp";
-import promo4 from "../../images/dark-spot-toner.webp";
-import promo5 from "../../images/glow-recipe.webp";
-import promo6 from "../../images/gelato.webp";
-import promo7 from "../../images/gelato.webp";
+import Product02 from "./Product02";
+import promo1 from "../../images/promo1.jpg";
+import promo2 from "../../images/promo2.jpg";
+import promo3 from "../../images/promo3.jpg";
+import promo4 from "../../images/promo4.jpg";
+import promo5 from "../../images/promo5.jpg";
+import promo6 from "../../images/promo6.jpg";
 
 const products = [
   {
     image: promo1,
     price: 1200,
     title: "Must-Have Minis",
-    subtitle: "ماكينة قص الشعر القابلة لإعادة الشحن",
+    subtitle: "Small but mighty picks to pocket right now",
+    description:
+      "Complimentary with $85 Sulwhasoo purchase.*Beauty Insider members only.Online only*Exclusions/terms apply. ",
     cta: "SHOP NOW",
     backgroundColor: "bg-gradient-to-r from-cyan-500 to-blue-500",
     feature: "new",
@@ -76,18 +77,9 @@ const products = [
     backgroundColor: "bg-amber-400",
     feature: "new",
   },
-  {
-    image: promo7,
-    price: 1200,
-    title: "Must-Have Minis",
-    subtitle: "Small but mighty picks to pocket right now",
-    cta: "SHOP NOW",
-    backgroundColor: "bg-fushia-200",
-    feature: "new",
-  },
 ];
 
-function ProductSliderSmall({ title, haveLabel }) {
+function ProductSliderLong({ title, haveLabel }) {
   return (
     <div className="my-10 md:px-32">
       <h2 className="px-2 mb-5 font-semibold text-xl ">{title}</h2>
@@ -106,22 +98,22 @@ function ProductSliderSmall({ title, haveLabel }) {
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 6,
+            slidesPerView: 5,
             spaceBetween: 10,
           },
         }}
       >
         {products.map((product, index) => (
           <SwiperSlide key={index}>
-            <Product01
+            <Product02
               image={product.image}
-              price={product.price}
               title={product.title}
               subtitle={product.subtitle}
+              description={product.description}
               feature={haveLabel ? product.feature : null}
             />
           </SwiperSlide>
@@ -131,4 +123,4 @@ function ProductSliderSmall({ title, haveLabel }) {
   );
 }
 
-export default ProductSliderSmall;
+export default ProductSliderLong;
