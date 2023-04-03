@@ -26,7 +26,7 @@ function Product02({
         className="flex flex-col items-start h-20 flex-nowrap  py-2 text-left space-y-1 px-2
       "
       >
-        <h3 className="text-xs uppercase font-bold">{title}</h3>
+        <h3 className="text-xs uppercase font-bold whitespace-pre">{title}</h3>
         <p className="text-sm font-normal  ">{subtitle}</p>
         <p className="text-xs tracking-wider font-light text-gray-600   ">
           {description}

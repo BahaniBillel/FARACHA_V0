@@ -28,6 +28,7 @@ import dropped4 from "../images/dark-spot-toner.webp";
 import dropped5 from "../images/glow-recipe.webp";
 import dropped6 from "../images/gelato.webp";
 import dropped7 from "../images/gelato.webp";
+import ProductKeenShowcase from "../components/products/ProductKeenShowCase";
 
 const beautyOffersData = [
   {
@@ -186,6 +187,7 @@ export default function Home() {
           data={justDropped}
         />
         <ProductKeenSlider title="Beauty Offers" data={beautyOffersData} />
+        <ProductKeenShowcase title="Showcase" data={beautyOffersData} />
       </main>
     </div>
   );

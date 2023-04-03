@@ -25,8 +25,10 @@ function Product01({
         className="flex flex-col items-start h-20 flex-nowrap absolute bottom-4 left-0 px-2 text-left
       "
       >
-        <p className="font-bold text-lg">{price} DA</p>
-        <h3 className="text-xs uppercase font-semibold">{title}</h3>
+        <p className="font-bold text-lg whitespace-pre">{price} DA</p>
+        <h3 className="text-xs uppercase font-semibold whitespace-pre">
+          {title}
+        </h3>
         <p className="text-sm font-light font-sans ">{subtitle}</p>
       </div>
       <h1
