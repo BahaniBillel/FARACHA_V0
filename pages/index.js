@@ -30,6 +30,9 @@ import dropped6 from "../images/gelato.webp";
 import dropped7 from "../images/gelato.webp";
 import ProductKeenShowcase from "../components/products/ProductKeenShowCase";
 import BottomNavigationBar from "../components/usables/BottomNavigationBar";
+import ProductKeenSliderTN from "../components/products/ProductKeenSliderTN";
+import CardTN from "../components/cards/CardTN";
+import SliderCardTN from "../components/cards/SliderCardTN";
 
 const beautyOffersData = [
   {
@@ -43,6 +46,7 @@ const beautyOffersData = [
     backgroundColor: "bg-gradient-to-r from-cyan-500 to-blue-500",
     feature: "new",
     details: true,
+    bgColor: "bg-teal-400",
   },
   {
     image: promo2,
@@ -55,6 +59,7 @@ const beautyOffersData = [
     backgroundColor: "bg-rose-300",
     feature: "new",
     details: true,
+    bgColor: "bg-amber-400",
   },
   {
     image: promo3,
@@ -66,6 +71,7 @@ const beautyOffersData = [
     cta: "SHOP NOW",
     backgroundColor: "bg-teal-700",
     feature: "new",
+    bgColor: "bg-fuchsia-400",
   },
   {
     image: promo4,
@@ -78,6 +84,7 @@ const beautyOffersData = [
     backgroundColor: "bg-red-500",
     feature: "new",
     details: true,
+    bgColor: "bg-cyan-400",
   },
   {
     image: promo5,
@@ -89,6 +96,7 @@ const beautyOffersData = [
     cta: "SHOP NOW",
     backgroundColor: "bg-zinc-400",
     feature: "new",
+    bgColor: "bg-emerald-400",
   },
   {
     image: promo6,
@@ -100,6 +108,7 @@ const beautyOffersData = [
     cta: "SHOP NOW",
     backgroundColor: "bg-amber-400",
     feature: "new",
+    bgColor: "bg-rose-400",
   },
 ];
 
@@ -179,7 +188,6 @@ export default function Home() {
       </Head>
 
       <main className="font-sans">
-        <Header />
         <Hero />
         <ProductKeenSliderSM title="Chosen for you" data={justDropped} />
         <ProductKeenSliderSM
@@ -189,7 +197,13 @@ export default function Home() {
         />
         <ProductKeenSlider title="Beauty Offers" data={beautyOffersData} />
         <ProductKeenShowcase title="Showcase" data={beautyOffersData} />
-        <BottomNavigationBar />
+        <ProductKeenSliderTN
+          title="Selling fast"
+          data={justDropped}
+          bottomLine={true}
+        />
+
+        <SliderCardTN />
       </main>
     </div>
   );

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import ProductImage from "../../images/gelato.webp";
 
 // Components
-import Product03 from "./Product03";
+import Product04 from "./Product04";
+import Modal from "../usables/Modal";
 
-const ProductKeenShowcase = ({ title, haveLabel, data }) => {
+const ProductKeenSliderTN = ({ title, haveLabel, data, bottomLine }) => {
   const [loaded, setLoaded] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -14,12 +16,12 @@ const ProductKeenShowcase = ({ title, haveLabel, data }) => {
 
     breakpoints: {
       "(min-width: 400px)": {
-        slides: { perView: 1.1, spacing: 20 },
+        slides: { perView: 2, spacing: 0 },
         loop: true,
         mode: "free",
       },
       "(min-width: 1000px)": {
-        slides: { perView: 2.5, spacing: 10 },
+        slides: { perView: 5.2, spacing: 10 },
         loop: true,
         mode: "free",
       },
@@ -32,23 +34,42 @@ const ProductKeenShowcase = ({ title, haveLabel, data }) => {
     },
   });
 
+  // Hnadle Modal
+  const [showModal, setShowModal] = useState(false);
+  const ShowModel = () => {
+    setShowModal(true);
+    // Disables Background Scrolling whilst the SideDrawer/Modal is open
+    if (typeof window != "undefined" && window.document) {
+      document.body.style.overflow = "hidden";
+    }
+  };
+
+  const CloseModalHandler = () => {
+    setShowModal(false);
+    // Unsets Background Scrolling to use when SideDrawer/Modal is closed
+    document.body.style.overflow = "unset";
+  };
+
   return (
     <div className="my-10 md:px-32 ">
-      <div className="navigation-wrapper   py-10 ">
+      <div
+        className={`navigation-wrapper   ${
+          bottomLine ? "border-b" : null
+        } py-5`}
+      >
         <div>
           <div className="">
             <h2 className="px-2 mb-5 font-semibold text-xl ">{title}</h2>
             <div ref={sliderRef} className="keen-slider">
               {data.map((product) => (
                 <div className="keen-slider__slide py-10 " key={product.image}>
-                  <Product03
+                  <Product04
                     image={product.image}
                     title={product.title}
                     subtitle={product.subtitle}
-                    description={product.description}
+                    price={product.price}
                     feature={haveLabel ? product.feature : null}
-                    hasDetails={product.details}
-                    bgColor={product.bgColor}
+                    QuickViewHandler={ShowModel}
                   />
                 </div>
               ))}
@@ -77,11 +98,20 @@ const ProductKeenShowcase = ({ title, haveLabel, data }) => {
           </>
         )}
       </div>
+      {showModal ? (
+        <Modal
+          CloseModal={CloseModalHandler}
+          picture={ProductImage}
+          brandname="Comas"
+          title="Bodyskin crema to soften the touch."
+        />
+      ) : null}
     </div>
   );
 };
 
-export default ProductKeenShowcase;
+export default ProductKeenSliderTN;
+
 function Arrow(props) {
   const disabeld = props.disabled ? " arrow--disabled" : "";
   return (

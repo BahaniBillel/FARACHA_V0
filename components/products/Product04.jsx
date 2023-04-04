@@ -3,7 +3,7 @@ import React from "react";
 
 import { HeartIcon } from "@heroicons/react/24/solid";
 
-function Product01({
+function Product04({
   image,
   title,
   subtitle,
@@ -13,7 +13,10 @@ function Product01({
   QuickViewHandler,
 }) {
   return (
-    <div className="w-48 h-72 group  border hover:shadow-xl p-2 relative rounded-md hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer">
+    <div
+      className="w-48 h-72 group  border hover:shadow-xl p-2 relative 
+    rounded-md hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer overflow-hidden"
+    >
       <span
         className={`absolute left-2 top-1 text-xs font-light px-3 py-0 ${featureColor}  bg-black text-white rounded-xl`}
       >
@@ -41,11 +44,12 @@ function Product01({
       >
         Quick look
       </h1>
-      <div className="absolute right-2 top-2 z-40 ">
-        <HeartIcon className="h-6 w-6 text-gray-300 " />
-      </div>
+      <div className="absolute -right-14 -top-10 z-40 bg-black w-40 h-20 rotate-45"></div>
+      <p className="text-white absolute right-2 top-2 z-40 font-semibold text-lg">
+        # 01
+      </p>
     </div>
   );
 }
 
-export default Product01;
+export default Product04;
