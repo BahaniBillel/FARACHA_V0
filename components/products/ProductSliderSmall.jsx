@@ -89,7 +89,7 @@ const products = [
 
 function ProductSliderSmall({ title, haveLabel }) {
   return (
-    <div className="my-10 md:px-32">
+    <div className=" md:px-32">
       <h2 className="px-2 mb-5 font-semibold text-xl ">{title}</h2>
       <Swiper
         freeMode={true}

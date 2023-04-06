@@ -12,12 +12,11 @@ import {
 
 function CardTN({ icon, title }) {
   return (
-    <div className="h-44 w-32 p-5 rounded-md border relative bg-white shadow-md ">
+    <div className="h-44 w-28 p-5 rounded-md border relative bg-white shadow-md ">
       <p className="text-xs md:text-sm text-gray-600 font-normal text-left ">
         {title}
       </p>
-
-      {icon}
+      <div className="absolute bottom-2 right-2">{icon}</div>
     </div>
   );
 }

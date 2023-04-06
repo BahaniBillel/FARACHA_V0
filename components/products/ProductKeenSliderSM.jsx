@@ -51,7 +51,7 @@ const ProductKeenSliderSM = ({ title, haveLabel, data, bottomLine }) => {
   };
 
   return (
-    <div className="my-10 md:px-32 ">
+    <div className=" md:px-32 ">
       <div
         className={`navigation-wrapper   ${
           bottomLine ? "border-b" : null

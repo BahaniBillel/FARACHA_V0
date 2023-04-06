@@ -33,7 +33,7 @@ const ProductKeenSlider = ({ title, haveLabel, data }) => {
   });
 
   return (
-    <div className="my-10 md:px-32 ">
+    <div className=" md:px-32 ">
       <div className="navigation-wrapper  border-b  py-10 ">
         <div>
           <div className="">

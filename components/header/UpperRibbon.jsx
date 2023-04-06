@@ -16,8 +16,34 @@ function UpperRibbon() {
     return () => clearInterval(interval);
   }, []);
 
+  const [isVisible, setIsVisible] = React.useState(true);
+
+  React.useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="h-10 overflow-hidden">
+    <div
+      className={`h-10 overflow-hidden  transition-transform duration-300 ${
+        isVisible ? "translate-y-10" : "translate-y-full"
+      }`}
+    >
       <Image src={bgImages[index]} alt="banner" />
     </div>
   );
