@@ -70,6 +70,7 @@ const ProductKeenSliderSM = ({ title, haveLabel, data, bottomLine }) => {
                     price={product.price}
                     feature={haveLabel ? product.feature : null}
                     QuickViewHandler={ShowModel}
+                    link={product.title}
                   />
                 </div>
               ))}
