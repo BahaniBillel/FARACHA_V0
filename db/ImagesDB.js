@@ -14,8 +14,12 @@ import dropped2 from "../images/Guanjing-24K-Pure-Gold-Collagen-30ml.webp";
 import dropped3 from "../images/Huile-Essentielle-AICHUN-BEAUTY-à-l'Ail-élargissement-fesses.jpeg";
 import dropped4 from "../images/bella-beauty-serum-cheveaux-reparation-sans-sulfates-mauve.jpg";
 import dropped5 from "../images/DR-RASHEL-GREEN-TEA-COFFRET.webp";
-import dropped6 from "../images/gelato.webp";
-import dropped7 from "../images/gelato.webp";
+import dropped6 from "../images/parfum-scandal-100ml-rose.jpg";
+import dropped7 from "../images/parfum-scandal-100ml-rouge.jpg";
+import dropped8 from "../images/parfum-scandal-100ml-orange.jpg";
+import dropped9 from "../images/Guanjing-batonnet-argile-masque-vert.jpg";
+import dropped10 from "../images/IMTINANE-Graisse-àl'Ail-créme-traitement-caplilaire-250ml.jpg";
+import dropped11 from "../images/IMTINANE-Graisse-àl'Ail-créme-traitement-caplilaire-500ml.jpg";
 
 const beautyOffersData = [
   {
@@ -145,8 +149,8 @@ const justDropped = [
   },
   {
     image: dropped6,
-    price: 1200,
-    title: "Must-Have Minis",
+    price: 1400,
+    title: "Parfum Scandal 100ml(copie)",
     subtitle: "Small but mighty picks to pocket right now",
     cta: "SHOP NOW",
     backgroundColor: "bg-amber-400",
@@ -154,9 +158,47 @@ const justDropped = [
   },
   {
     image: dropped7,
-    price: 1200,
-    title: "Must-Have Minis",
+    price: 1400,
+    title: "Parfum Scandal 100ml(copie)",
     subtitle: "Small but mighty picks to pocket right now",
+    cta: "SHOP NOW",
+    backgroundColor: "bg-amber-400",
+    feature: "new",
+  },
+  {
+    image: dropped8,
+    price: 1400,
+    title: "Parfum Scandal 100ml(copie)",
+    subtitle: "Small but mighty picks to pocket right now",
+    cta: "SHOP NOW",
+    backgroundColor: "bg-amber-400",
+    feature: "new",
+  },
+  {
+    image: dropped9,
+    price: 1200,
+    title: "Bâtonnet Masque Vert GUANJING",
+    subtitle:
+      "bâtonnet en argile de masque vert à base de thé vert pour nettoyer et purifier la peau, contrôler l'huile et lutter contre l'acné.",
+    cta: "SHOP NOW",
+    backgroundColor: "bg-fushia-200",
+    feature: "new",
+  },
+
+  {
+    image: dropped10,
+    price: 1350,
+    title: "IMTINANE Graisse à l'Ail-250ml-",
+    subtitle: "Créme de traitement capilaire.",
+    cta: "SHOP NOW",
+    backgroundColor: "bg-fushia-200",
+    feature: "new",
+  },
+  {
+    image: dropped11,
+    price: 1700,
+    title: "IMTINANE Graisse à l'Ail-500ml-",
+    subtitle: "Créme de traitement capilaire.",
     cta: "SHOP NOW",
     backgroundColor: "bg-fushia-200",
     feature: "new",

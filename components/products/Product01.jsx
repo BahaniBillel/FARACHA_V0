@@ -22,7 +22,7 @@ function Product01({
         {feature}
       </span>
       <Link href={`/product/${link}`}>
-        <div className="h-48">
+        <div className="h-48 overflow-hidden">
           <Image src={image} alt={title} />
         </div>
 
@@ -30,7 +30,7 @@ function Product01({
           className="flex flex-col items-start h-24 flex-nowrap absolute bottom-4 left-0 px-2 text-left
       "
         >
-          <p className="font-bold text-lg whitespace-pre">{price} DA</p>
+          <p className="font-bold text-lg whitespace-pre pt-1">{price} DA</p>
           <h3 className="text-xs uppercase font-semibold ">{title}</h3>
           <p className="text-xs font-light font-sans line-clamp-3 ">
             {subtitle}
