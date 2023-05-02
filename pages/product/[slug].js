@@ -25,6 +25,7 @@ function ProductDetail({ page }) {
 
   return (
     <div>
+      <p className="text-2xl">{page.name}</p>
       <ProductOverviewOne />
     </div>
   );

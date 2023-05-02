@@ -15,7 +15,7 @@ function Product01({
   link,
 }) {
   return (
-    <div className="w-48 h-72 group  border hover:shadow-xl p-2 relative rounded-md hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer">
+    <div className="w-48 h-80 group  border hover:shadow-xl p-2 relative rounded-md hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer">
       <span
         className={`absolute left-2 top-1 text-xs font-light px-3 py-0 ${featureColor}  bg-black text-white rounded-xl`}
       >
@@ -27,14 +27,14 @@ function Product01({
         </div>
 
         <div
-          className="flex flex-col items-start h-20 flex-nowrap absolute bottom-4 left-0 px-2 text-left
+          className="flex flex-col items-start h-24 flex-nowrap absolute bottom-4 left-0 px-2 text-left
       "
         >
           <p className="font-bold text-lg whitespace-pre">{price} DA</p>
-          <h3 className="text-xs uppercase font-semibold whitespace-pre">
-            {title}
-          </h3>
-          <p className="text-sm font-light font-sans ">{subtitle}</p>
+          <h3 className="text-xs uppercase font-semibold ">{title}</h3>
+          <p className="text-xs font-light font-sans line-clamp-3 ">
+            {subtitle}
+          </p>
         </div>
       </Link>
       <p

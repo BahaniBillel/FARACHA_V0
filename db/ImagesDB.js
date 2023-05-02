@@ -9,11 +9,11 @@ import promo6 from "../images/promo6.jpg";
 
 // Images for Just Dropped
 
-import dropped1 from "../images/gelato.webp";
-import dropped2 from "../images/lip-butter-lamp.webp";
-import dropped3 from "../images/lancome.webp";
-import dropped4 from "../images/dark-spot-toner.webp";
-import dropped5 from "../images/glow-recipe.webp";
+import dropped1 from "../images/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.jpg";
+import dropped2 from "../images/Guanjing-24K-Pure-Gold-Collagen-30ml.webp";
+import dropped3 from "../images/Huile-Essentielle-AICHUN-BEAUTY-à-l'Ail-élargissement-fesses.jpeg";
+import dropped4 from "../images/bella-beauty-serum-cheveaux-reparation-sans-sulfates-mauve.jpg";
+import dropped5 from "../images/DR-RASHEL-GREEN-TEA-COFFRET.webp";
 import dropped6 from "../images/gelato.webp";
 import dropped7 from "../images/gelato.webp";
 
@@ -98,18 +98,19 @@ const beautyOffersData = [
 const justDropped = [
   {
     image: dropped1,
-    price: 1200,
-    title: "vaseline",
-    subtitle: "ماكينة قص الشعر القابلة لإعادة الشحن",
+    price: 1300,
+    title: "Crème AICHUN BEAUTY à la papaye .",
+    subtitle:
+      "pour l'élargissement et le raffermissement de la poitrine, efficace en 3 jours, contenance de 100 ml",
     cta: "SHOP NOW",
     backgroundColor: "bg-gradient-to-r from-cyan-500 to-blue-500",
     feature: "new",
   },
   {
     image: dropped2,
-    price: 1200,
-    title: "bella beauty",
-    subtitle: "Small but mighty picks to pocket right now",
+    price: 1400,
+    title: "Guanjing 24K Pure Gold Collagen 30ml",
+    subtitle: "hydratation, réparation et raffermissement du corps",
     cta: "SHOP NOW",
     backgroundColor: "bg-rose-300",
     feature: "new",
@@ -117,25 +118,26 @@ const justDropped = [
   {
     image: dropped3,
     price: 1200,
-    title: "Must-Have Minis",
-    subtitle: "Small but mighty picks to pocket right now",
+    title: "Huile Essentielle AICHUN BEAUTY à l'Ail ",
+    subtitle:
+      "pour l'élargissement et le raffermissement des hanches et des fesses, effet rapide de grosses fesses, contenance de 30 ml.",
     cta: "SHOP NOW",
     backgroundColor: "bg-teal-700",
     feature: "new",
   },
   {
     image: dropped4,
-    price: 800,
-    title: "Dark spot toner",
-    subtitle: "Small but mighty picks to pocket right now",
+    price: 900,
+    title: "BELLA BEAUTY-HAIR REPAIR",
+    subtitle: "Serum sans salfates pour reparation cheveaux.",
     cta: "SHOP NOW",
     backgroundColor: "bg-red-500",
     feature: "new",
   },
   {
     image: dropped5,
-    price: 1200,
-    title: "Must-Have Minis",
+    price: 8500,
+    title: "dr rashel green tea coffret",
     subtitle: "Small but mighty picks to pocket right now",
     cta: "SHOP NOW",
     backgroundColor: "bg-zinc-400",
