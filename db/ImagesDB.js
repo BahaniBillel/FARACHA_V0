@@ -99,7 +99,7 @@ const justDropped = [
   {
     image: dropped1,
     price: 1200,
-    title: "Must-Have Minis",
+    title: "vaseline",
     subtitle: "ماكينة قص الشعر القابلة لإعادة الشحن",
     cta: "SHOP NOW",
     backgroundColor: "bg-gradient-to-r from-cyan-500 to-blue-500",
@@ -108,7 +108,7 @@ const justDropped = [
   {
     image: dropped2,
     price: 1200,
-    title: "Must-Have Minis",
+    title: "bella beauty",
     subtitle: "Small but mighty picks to pocket right now",
     cta: "SHOP NOW",
     backgroundColor: "bg-rose-300",
