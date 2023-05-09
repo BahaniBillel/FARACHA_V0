@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import promo1 from "../../images/promo1.jpg";
-import promo2 from "../../images/promo2.jpg";
-import promo3 from "../../images/promo3.jpg";
-import promo4 from "../../images/promo4.jpg";
-import promo5 from "../../images/promo5.jpg";
-import promo6 from "../../images/promo6.jpg";
+import promo1 from "../../public/images/promo1.jpg";
+import promo2 from "../../public/images/promo2.jpg";
+import promo3 from "../../public/images/promo3.jpg";
+import promo4 from "../../public/images/promo4.jpg";
+import promo5 from "../../public/images/promo5.jpg";
+import promo6 from "../../public/images/promo6.jpg";
 import Image from "next/image";
 
 const Slider = () => {

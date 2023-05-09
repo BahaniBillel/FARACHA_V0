@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import ProductImage from "../../images/gelato.webp";
+import ProductImage from "../../public/images/promo1.jpg";
 
 // Components
 import Product01 from "./Product01";

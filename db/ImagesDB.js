@@ -1,25 +1,25 @@
 // Images for Beauty Offers
 
-import promo1 from "../images/promo1.jpg";
-import promo2 from "../images/promo2.jpg";
-import promo3 from "../images/promo3.jpg";
-import promo4 from "../images/promo4.jpg";
-import promo5 from "../images/promo5.jpg";
-import promo6 from "../images/promo6.jpg";
+import promo1 from "../public/images/promo1.jpg";
+import promo2 from "../public/images/promo2.jpg";
+import promo3 from "../public/images/promo3.jpg";
+import promo4 from "../public/images/promo4.jpg";
+import promo5 from "../public/images/promo5.jpg";
+import promo6 from "../public/images/promo6.jpg";
 
 // Images for Just Dropped
 
-import dropped1 from "../images/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.jpg";
-import dropped2 from "../images/Guanjing-24K-Pure-Gold-Collagen-30ml.webp";
-import dropped3 from "../images/Huile-Essentielle-AICHUN-BEAUTY-à-l'Ail-élargissement-fesses.jpeg";
-import dropped4 from "../images/bella-beauty-serum-cheveaux-reparation-sans-sulfates-mauve.jpg";
-import dropped5 from "../images/DR-RASHEL-GREEN-TEA-COFFRET.webp";
-import dropped6 from "../images/parfum-scandal-100ml-rose.jpg";
-import dropped7 from "../images/parfum-scandal-100ml-rouge.jpg";
-import dropped8 from "../images/parfum-scandal-100ml-orange.jpg";
-import dropped9 from "../images/Guanjing-batonnet-argile-masque-vert.jpg";
-import dropped10 from "../images/IMTINANE-Graisse-àl'Ail-créme-traitement-caplilaire-250ml.jpg";
-import dropped11 from "../images/IMTINANE-Graisse-àl'Ail-créme-traitement-caplilaire-500ml.jpg";
+import dropped1 from "../public/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.jpg";
+import dropped2 from "../public/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml.webp";
+import dropped3 from "../public/images/productsImages/Huile-Essentielle-AICHUN-BEAUTY-à-l'Ail-élargissement-fesses.jpeg";
+import dropped4 from "../public/images/productsImages/bella-beauty-serum-cheveaux-reparation-sans-sulfates-mauve.jpg";
+import dropped5 from "../public/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET.webp";
+import dropped6 from "../public/images/productsImages/parfum-scandal-100ml-rose.jpg";
+import dropped7 from "../public/images/productsImages/parfum-scandal-100ml-rouge.jpg";
+import dropped8 from "../public/images/productsImages/parfum-scandal-100ml-orange.jpg";
+import dropped9 from "../public/images/productsImages/Guanjing-batonnet-argile-masque-vert.jpg";
+import dropped10 from "../public/images/productsImages/IMTINANE-Graisse-àl'Ail-créme-traitement-caplilaire-250ml.jpg";
+import dropped11 from "../public/images/productsImages/IMTINANE-Graisse-àl'Ail-créme-traitement-caplilaire-500ml.jpg";
 
 const beautyOffersData = [
   {

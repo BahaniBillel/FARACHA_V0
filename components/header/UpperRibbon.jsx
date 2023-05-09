@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import MakeupCollection from "../../images/makeup_collection.jpg";
-import Promo3 from "../../images/promo3.jpg";
-import Promo5 from "../../images/promo5.jpg";
+import MakeupCollection from "../../public/images/makeup_collection.jpg";
+import Promo3 from "../../public/images/promo3.jpg";
+import Promo5 from "../../public/images/promo5.jpg";
 
 const bgImages = [MakeupCollection, Promo3, Promo5];
 

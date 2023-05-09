@@ -4,60 +4,60 @@ import { IoIosPeople } from "react-icons/io";
 import { CiLogin } from "react-icons/ci";
 import { BsHeart, BsBasket, BsSearch } from "react-icons/bs";
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../public/images/logo.png";
 
 function Identification() {
   return (
-    <div className="bg-white h-28 shadow-md md:px-14 items-center justify-center flex flex-row md:space-x-6">
-      <div className="text-xl text-slate-900 tracking-widest font-bold font-sans">
-        <Link href="/">FARACHA </Link>
+    <div className=" px-2 bg-white   md:px-fit items-center justify-center  grid grid-cols-4 md:space-x-6 my-5">
+      <div className="text-xl text-slate-900 tracking-widest font-bold font-sans col-span-1 ">
+        <Link href="/">
+          <Image src={Logo} alt="faracha" className="h-fit w-fit md:h-20" />
+        </Link>
       </div>
-      <div className="relative flex flex-row justify-center items-center">
+
+      {/* search bar */}
+      <div className="relative flex flex-row justify-center items-center col-span-3 md:col-span-2 ml-5 h-full">
         <input
           type="text"
           placeholder="Search"
-          className=" bg-gray-100 hover:bg-fuchsia-200 transition-colors duration-200 ease-in-out rounded-2xl  pl-10 px-2 py-1   outline-none w-44 md:w-96 "
+          className=" bg-gray-100 hover:bg-fuchsia-200 transition-colors duration-200 ease-in-out rounded-2xl  pl-10 px-2 py-1   outline-none w-full md:w-full "
         />
         <BsSearch className="w-4 h-4 text-gray-500 absolute left-2" />
       </div>
-      <div className="flex flex-row md:space-x-5">
-        <ul className="hidden lg:flex flex-row space-x-8 border-r border-gray-300 pr-5">
-          <li className="flex flex-row items-center cursor-pointer">
-            <SiHomeassistantcommunitystore className="w-6 h-6 text-gray-800" />
-            <p className="hidden md:flex text-sm font-light ml-1 flex-col">
-              Store & services
-              <span className="text-xs text-gray-400">choose your store</span>
-            </p>
-          </li>
-          <li className="flex flex-row items-center cursor-pointer">
-            <IoIosPeople className="w-6 h-6 text-gray-800" />
-            <p className="hidden md:flex text-sm font-light ml-1 flex-col">
-              Community
-              <span className="text-xs text-gray-400">share</span>
-            </p>
-          </li>
-        </ul>
+
+      {/* buttons */}
+      <div className="hidden lg:flex flex-row  md:space-x-5 col-span-1">
         <ul className="flex flex-row space-x-4 md:space-x-8 ">
-          <li className="flex flex-row items-center cursor-pointer">
-            <BsHeart className="w-6 h-6 text-gray-800" />
-            <p className="hidden md:flex text-sm font-light ml-1 flex-col">
-              LogIn
-            </p>
-          </li>
-          <li className="flex flex-row items-center cursor-pointer">
-            <BsBasket className="w-6 h-6 text-gray-800" />
-            <p className="hidden md:flex text-sm font-light ml-1 flex-col">
-              Basket
-            </p>
-          </li>
-          <li className="flex flex-row items-center cursor-pointer">
-            <CiLogin className="w-6 h-6 text-gray-800" />
-            <p className="hidden md:flex text-sm font-light ml-1 flex-col">
-              Login
-              <span className="text-xs text-gray-400 hidden lg:block">
+          <Link href="#">
+            <li className="flex flex-row items-center ">
+              <BsHeart className="w-6 h-6 text-gray-800" />
+              <p className="hidden md:flex text-sm font-light ml-1 flex-col">
+                Likes
+              </p>
+            </li>
+          </Link>
+
+          <Link href="#">
+            <li className="flex flex-row items-center cursor-pointer">
+              <BsBasket className="w-6 h-6 text-gray-800" />
+              <p className="hidden md:flex text-sm font-light ml-1 flex-col">
+                Basket
+              </p>
+            </li>
+          </Link>
+
+          <Link href="/admin">
+            <li className="flex flex-row items-center cursor-pointer">
+              <CiLogin className="w-6 h-6 text-gray-800" />
+              <p className="hidden md:flex text-sm font-light ml-1 flex-col">
+                Login
+                {/* <span className="text-xs text-gray-400 hidden lg:block">
                 Enter your space
-              </span>
-            </p>
-          </li>
+              </span> */}
+              </p>
+            </li>
+          </Link>
         </ul>
       </div>
     </div>
@@ -65,3 +65,20 @@ function Identification() {
 }
 
 export default Identification;
+
+<ul className="flex flex-row space-x-8 border-r border-gray-300 pr-5">
+  <li className="flex flex-row items-center cursor-pointer">
+    <SiHomeassistantcommunitystore className="w-6 h-6 text-gray-800" />
+    <p className="hidden md:flex text-sm font-light ml-1 flex-col">
+      Store & services
+      {/* <span className="text-xs text-gray-400">choose your store</span> */}
+    </p>
+  </li>
+  <li className="flex flex-row items-center cursor-pointer">
+    <IoIosPeople className="w-6 h-6 text-gray-800" />
+    <p className="hidden md:flex text-sm font-light ml-1 flex-col">
+      Community
+      <span className="text-xs text-gray-400">share</span>
+    </p>
+  </li>
+</ul>;
