@@ -18,7 +18,9 @@ import { bindActionCreators } from "redux";
 import { basketActions } from "../../redux/slices/basketSlice";
 
 function Listing({ product }) {
-  console.log(product);
+  // Dispatching product to store
+  const dispatch = useDispatch();
+
   const router = useRouter();
 
   if (router.isFallback) {
@@ -28,9 +30,6 @@ function Listing({ product }) {
   if (!product) {
     return <div>Product not found</div>;
   }
-
-  // Dispatching product to store
-  const dispatch = useDispatch();
 
   // ...
 
