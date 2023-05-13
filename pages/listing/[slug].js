@@ -53,9 +53,11 @@ function Listing({ product }) {
 
       // Decrease the stock quantity in Firestore
 
-      await updateDoc(productRef, {
-        sku: stockQuantity - 1, // Decrease the stock quantity by 1
-      });
+      // await updateDoc(productRef, {
+      //   sku: stockQuantity - 1, // Decrease the stock quantity by 1
+      // }
+
+      // );
 
       // Notify the user
       notify(product.name);
