@@ -103,7 +103,7 @@ const justDropped = [
   {
     image: dropped1,
     price: 1300,
-    title: "Crème AICHUN BEAUTY à la papaye .",
+    title: "Crème AICHUN BEAUTY à la papaye",
     subtitle:
       "pour l'élargissement et le raffermissement de la poitrine, efficace en 3 jours, contenance de 100 ml",
     cta: "SHOP NOW",
@@ -122,7 +122,7 @@ const justDropped = [
   {
     image: dropped3,
     price: 1200,
-    title: "Huile Essentielle AICHUN BEAUTY à l'Ail ",
+    title: "Huile Essentielle AICHUN BEAUTY à l'Ail",
     subtitle:
       "pour l'élargissement et le raffermissement des hanches et des fesses, effet rapide de grosses fesses, contenance de 30 ml.",
     cta: "SHOP NOW",

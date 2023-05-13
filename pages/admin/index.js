@@ -2,68 +2,122 @@ import React from "react";
 import { ref, uploadBytes } from "firebase/storage";
 import { storage, db } from "../../firebase";
 
-// import Vaseline from "../../public/images/productsImages";
-
 import { doc, setDoc, Timestamp } from "firebase/firestore";
 
 function Admin() {
-  const docData = {
-    stringExample: "Hello world!",
-    name: "Guanjing 24K Pure Gold Collagen 30ml",
-    color: "pink",
-    sku: 6,
-    date: new Date("December 10, 1815").toISOString(),
-    images: [
-      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-04.webp",
-      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-02.webp",
-      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-03.webp",
-      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml.webp",
-    ],
-    nullExample: null,
-    objectExample: {
-      a: 5,
-      b: {
-        nested: "foo",
-      },
+  const docData = [
+    {
+      id: 1,
+      name: "Guanjing 24K Pure Gold Collagen 30ml",
+      subtitle:
+        "pour l'élargissement et le raffermissement de la poitrine, efficace en 3 jours, contenance de 100 ml",
+      productImage:
+        "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-04.webp",
+      price: 1400,
+      exPrice: 1800,
+      category: "skincare",
+      label: "new",
+      sku: 6,
+      images: [
+        "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-04.webp",
+        "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-02.webp",
+        "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-03.webp",
+        "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml.webp",
+      ],
+
+      breadcrumbs: [
+        { id: 1, name: "Skincare", href: "#" },
+        { id: 2, name: "24K Pure Gold Collagen", href: "#" },
+      ],
+
+      description: `Ce sérum facial est enrichi en ingrédients éclaircissants et hydratants tels que l'arbutine pour atténuer efficacement la mélanine, favoriser la synthèse du collagène, combattre les signes visibles de vieillissement et hydrater la peau, la laissant lumineuse.`,
+      features: [
+        `Le puissant pouvoir revitalisant de l'or actif 24 carats peut 
+      favoriser le métabolisme et lutter contre le vieillissement`,
+        `Hydrate, guérit les ridules ; lisse et raffermit la peau ; soin efficace ; redonne à la peau sa splendeur.`,
+        ` Peut rapidement pénétrer le derme, libérer des ions actifs d'or, améliorer l'absorption de la peau de 10 fois.`,
+        `Améliore les ridules, les ridules sèches, illumine uniformément la peau, revitalise et hydrate. `,
+        `Contient 7 types de combinaisons de peptides qui nourrissent la peau, éliminent les rides, rendent la peau plus lisse et améliorent son élasticité`,
+        `Contient des extraits de plantes tels que le lotus et le Wujiapi, ainsi que du collagène hydrolysé extrait du cartilage de saumon pour augmenter l'élasticité de la peau`,
+        `retenir l'eau et lutter contre les signes du vieillissement, aidant à retrouver une peau jeune. `,
+        `L'or pur 24 carats détoxifie, raffermit, éclaircit la peau et favorise le métabolisme.`,
+        "Les extraits de plantes marines en profondeur hydratent et raffermissent la peau.",
+      ],
+      usage: [
+        `Après avoir nettoyé la peau, prenez une quantité appropriée de sérum. Appliquez-le uniformément sur la peau et massez doucement jusqu'à absorption complète.`,
+        `Si vous avez une crème, appliquez une quantité suffisante pour conserver l'essence.`,
+        `Utilisez une fois le matin et une fois le soir.`,
+      ],
+      notes: [
+        `Veuillez tenir le produit hors de portée des enfants.`,
+        `À usage externe uniquement, évitez tout contact avec les yeux.`,
+        `Cessez toute utilisation si vous ressentez une quelconque gêne.`,
+      ],
+      reviews: [],
+      orders: [],
     },
+    {
+      id: 2,
+      name: "Crème AICHUN BEAUTY à la papaye",
+      subtitle:
+        "pour l'élargissement et le raffermissement de la poitrine, efficace en 3 jours, contenance de 100 ml",
+      productImage:
+        "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.jpg",
+      price: 1400,
+      exPrice: 1800,
+      category: "skincare",
+      label: "new",
+      sku: 6,
+      images: [
+        "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.jpg",
+        "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine-02.jpg",
+        "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine-03.jpg",
+        "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.webp",
+      ],
 
-    breadcrumbs: [
-      { id: 1, name: "Skincare", href: "#" },
-      { id: 2, name: "24K Pure Gold Collagen", href: "#" },
-    ],
-    colors: [
-      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
-      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
-      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
-    ],
-    sizes: [
-      { name: "XXS", inStock: false },
-      { name: "XS", inStock: true },
-      { name: "S", inStock: true },
-      { name: "M", inStock: true },
-      { name: "L", inStock: true },
-      { name: "XL", inStock: true },
-      { name: "2XL", inStock: true },
-      { name: "3XL", inStock: true },
-    ],
+      breadcrumbs: [
+        { id: 1, name: "Skincare", href: "#" },
+        { id: 2, name: "24K Pure Gold Collagen", href: "#" },
+      ],
 
-    description: `The Basic Tee 6-Pack allows you to fully express your vibrant personality with 
-      three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? 
-      Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.`,
-    highlights: [
-      "Hand cut and sewn locally",
-      "Dyed with our proprietary colors",
-      "Pre-washed & pre-shrunk",
-      "Ultra-soft 100% cotton",
-    ],
-    details: `The 6-Pack includes two black, two white, and two heather gray Basic Tees.
-       Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.`,
-  };
+      description: `Ce sérum facial est enrichi en ingrédients éclaircissants et hydratants tels que l'arbutine pour atténuer efficacement la mélanine, favoriser la synthèse du collagène, combattre les signes visibles de vieillissement et hydrater la peau, la laissant lumineuse.`,
+      features: [
+        `Le puissant pouvoir revitalisant de l'or actif 24 carats peut 
+      favoriser le métabolisme et lutter contre le vieillissement`,
+        `Hydrate, guérit les ridules ; lisse et raffermit la peau ; soin efficace ; redonne à la peau sa splendeur.`,
+        ` Peut rapidement pénétrer le derme, libérer des ions actifs d'or, améliorer l'absorption de la peau de 10 fois.`,
+        `Améliore les ridules, les ridules sèches, illumine uniformément la peau, revitalise et hydrate. `,
+        `Contient 7 types de combinaisons de peptides qui nourrissent la peau, éliminent les rides, rendent la peau plus lisse et améliorent son élasticité`,
+        `Contient des extraits de plantes tels que le lotus et le Wujiapi, ainsi que du collagène hydrolysé extrait du cartilage de saumon pour augmenter l'élasticité de la peau`,
+        `retenir l'eau et lutter contre les signes du vieillissement, aidant à retrouver une peau jeune. `,
+        `L'or pur 24 carats détoxifie, raffermit, éclaircit la peau et favorise le métabolisme.`,
+        "Les extraits de plantes marines en profondeur hydratent et raffermissent la peau.",
+      ],
+      usage: [
+        `Après avoir nettoyé la peau, prenez une quantité appropriée de sérum. Appliquez-le uniformément sur la peau et massez doucement jusqu'à absorption complète.`,
+        `Si vous avez une crème, appliquez une quantité suffisante pour conserver l'essence.`,
+        `Utilisez une fois le matin et une fois le soir.`,
+      ],
+      notes: [
+        `Veuillez tenir le produit hors de portée des enfants.`,
+        `À usage externe uniquement, évitez tout contact avec les yeux.`,
+        `Cessez toute utilisation si vous ressentez une quelconque gêne.`,
+      ],
+      reviews: [],
+      orders: [],
+    },
+  ];
 
-  const UploadDoc = async () => {
-    await setDoc(doc(db, "products", docData.name), docData);
-
-    alert("document was succefully uploaded to the database in firebase");
+  const uploadData = async () => {
+    try {
+      // Loop through each item in docData array and upload to Firestore
+      for (const item of docData) {
+        await setDoc(doc(db, "products", item.name), item);
+      }
+      alert("Data was successfully uploaded to the Firestore database.");
+    } catch (error) {
+      console.error("Error uploading data:", error);
+    }
   };
 
   return (
@@ -72,7 +126,7 @@ function Admin() {
         <div
           className="rounded-md py-1 px-4 bg-slate-300 text-black cursor-pointer hover:scale-95 transition-all 
         duration-150"
-          onClick={UploadDoc}
+          onClick={uploadData}
         >
           upload data
         </div>

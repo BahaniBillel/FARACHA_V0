@@ -21,7 +21,7 @@ function Product01({
       >
         {feature}
       </span>
-      <Link href={`/product/${link}`}>
+      <Link href={`/listing/${link}`}>
         <div className="h-48 overflow-hidden">
           <Image src={image} alt={title} />
         </div>

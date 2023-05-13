@@ -6,8 +6,13 @@ import { BsHeart, BsBasket, BsSearch } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/images/logo.png";
+import SearchComp from "../usables/SearchComp";
+import { useSelector } from "react-redux";
+import { selectItems, selectLikes } from "../../redux/slices/basketSlice";
 
 function Identification() {
+  const items = useSelector(selectItems);
+  const likes = useSelector(selectLikes);
   return (
     <div className=" px-2 bg-white   md:px-fit items-center justify-center  grid grid-cols-4 md:space-x-6 my-5">
       <div className="text-xl text-slate-900 tracking-widest font-bold font-sans col-span-1 ">
@@ -17,14 +22,7 @@ function Identification() {
       </div>
 
       {/* search bar */}
-      <div className="relative flex flex-row justify-center items-center col-span-3 md:col-span-2 ml-5 h-full">
-        <input
-          type="text"
-          placeholder="Search"
-          className=" bg-gray-100 hover:bg-fuchsia-200 transition-colors duration-200 ease-in-out rounded-2xl  pl-10 px-2 py-1   outline-none w-full md:w-full "
-        />
-        <BsSearch className="w-4 h-4 text-gray-500 absolute left-2" />
-      </div>
+      <SearchComp />
 
       {/* buttons */}
       <div className="hidden lg:flex flex-row  md:space-x-5 col-span-1">
@@ -38,13 +36,13 @@ function Identification() {
             </li>
           </Link>
 
-          <Link href="#">
-            <li className="flex flex-row items-center cursor-pointer">
-              <BsBasket className="w-6 h-6 text-gray-800" />
-              <p className="hidden md:flex text-sm font-light ml-1 flex-col">
-                Basket
-              </p>
-            </li>
+          <Link href="/cart">
+            <div className="relative items-center ">
+              <BsBasket className="h-5 md:h-8 " />
+              <span className=" absolute -top-2 left-2/4 text-white text-xs font-bold   z-10  bg-red-600 py-1 px-2 rounded-full">
+                {items ? items.length : 0}
+              </span>
+            </div>
           </Link>
 
           <Link href="/admin">

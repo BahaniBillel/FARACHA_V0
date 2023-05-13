@@ -1,6 +1,6 @@
 export const links = [
   {
-    name: "New",
+    name: "Nouveautés",
     submenu: true,
     sublinks: [
       {
@@ -57,7 +57,7 @@ export const links = [
     ],
   },
   {
-    name: "Brands",
+    name: "Marques",
     submenu: true,
     sublinks: [
       {
@@ -114,7 +114,7 @@ export const links = [
     ],
   },
   {
-    name: "Makeup",
+    name: "Maquillage",
     submenu: true,
     sublinks: [
       {
@@ -171,33 +171,24 @@ export const links = [
     ],
   },
   {
-    name: "SkinCare",
+    name: "Soin Visage",
   },
   {
-    name: "Hair",
-  },
-  ,
-  {
-    name: "Fragrance",
-  },
-  {
-    name: "Tools & Brushes",
+    name: "Cheveux",
   },
   ,
   {
-    name: "Bath & Body",
+    name: "Parfum",
+  },
+  {
+    name: "Corps & Bain",
   },
   ,
   {
-    name: "Mini Size",
+    name: "Packs",
   },
+  ,
   {
-    name: "Gifts",
-  },
-  {
-    name: "Beauty Under $20",
-  },
-  {
-    name: "Sale & Offers",
+    name: "Cadeaux",
   },
 ];

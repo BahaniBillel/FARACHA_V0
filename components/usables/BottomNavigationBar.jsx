@@ -5,6 +5,7 @@ import { CiShop } from "react-icons/ci";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import { IoMdPeople } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi";
+import Link from "next/link";
 
 function BottomNavigationBar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -44,10 +45,12 @@ function BottomNavigationBar() {
         <MdOutlineLocalOffer className="h-6 w-6" />
         <p className="text-gray-600">Offers</p>
       </div>
-      <div className="flex flex-col text-xs font-light items-center justify-center cursor-pointer">
-        <HiOutlineShoppingBag className="h-6 w-6" />
-        <p className="text-gray-600">Shop</p>
-      </div>
+      <Link href="/cart">
+        <div className="flex flex-col text-xs font-light items-center justify-center cursor-pointer">
+          <HiOutlineShoppingBag className="h-6 w-6" />
+          <p className="text-gray-600">Shop</p>
+        </div>
+      </Link>
       <div className="flex flex-col text-xs font-light items-center justify-center cursor-pointer ">
         <GrUserFemale className="h-6 w-6" />
         <p className="text-gray-600">Me</p>

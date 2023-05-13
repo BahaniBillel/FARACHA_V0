@@ -1,0 +1,142 @@
+[
+  {
+    name: "Crème AICHUN BEAUTY à la papaye",
+    subtitle:
+      "pour l'élargissement et le raffermissement de la poitrine, efficace en 3 jours, contenance de 100 ml",
+    price: 1300,
+    exPrice: 1800,
+    category: "skincare",
+    label: "new",
+    sku: 6,
+    images: [
+      "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.jpg",
+      "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.webp",
+      "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine-02.jpg",
+      "/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine-03.jpg",
+    ],
+
+    breadcrumbs: [
+      { id: 1, name: "Skincare", href: "#" },
+      { id: 2, name: "Crème AICHUN BEAUTY à la papaye", href: "#" },
+    ],
+
+    description: `Ce sérum facial est enrichi en ingrédients éclaircissants et hydratants tels que l'arbutine pour atténuer efficacement la mélanine, favoriser la synthèse du collagène, combattre les signes visibles de vieillissement et hydrater la peau, la laissant lumineuse.`,
+    caractéristiques: [
+      `Le puissant pouvoir revitalisant de l'or actif 24 carats peut 
+      favoriser le métabolisme et lutter contre le vieillissement`,
+      `Hydrate, guérit les ridules ; lisse et raffermit la peau ; soin efficace ; redonne à la peau sa splendeur.`,
+      ` Peut rapidement pénétrer le derme, libérer des ions actifs d'or, améliorer l'absorption de la peau de 10 fois.`,
+      `Améliore les ridules, les ridules sèches, illumine uniformément la peau, revitalise et hydrate. `,
+      `Contient 7 types de combinaisons de peptides qui nourrissent la peau, éliminent les rides, rendent la peau plus lisse et améliorent son élasticité`,
+      `Contient des extraits de plantes tels que le lotus et le Wujiapi, ainsi que du collagène hydrolysé extrait du cartilage de saumon pour augmenter l'élasticité de la peau`,
+      `retenir l'eau et lutter contre les signes du vieillissement, aidant à retrouver une peau jeune. `,
+      `L'or pur 24 carats détoxifie, raffermit, éclaircit la peau et favorise le métabolisme.`,
+      "Les extraits de plantes marines en profondeur hydratent et raffermissent la peau.",
+    ],
+    usage: [
+      `Après avoir nettoyé la peau, prenez une quantité appropriée de sérum. Appliquez-le uniformément sur la peau et massez doucement jusqu'à absorption complète.`,
+      `Si vous avez une crème, appliquez une quantité suffisante pour conserver l'essence.`,
+      `Utilisez une fois le matin et une fois le soir.`,
+    ],
+    notes: [
+      `Veuillez tenir le produit hors de portée des enfants.`,
+      `À usage externe uniquement, évitez tout contact avec les yeux.`,
+      `Cessez toute utilisation si vous ressentez une quelconque gêne.`,
+    ],
+    reviews: [],
+    orders: [],
+  },
+  {
+    name: "Guanjing 24K Pure Gold Collagen 30ml",
+    subtitle: "hydratation, réparation et raffermissement du corps",
+    price: 1400,
+    exPrice: 1800,
+    category: "skincare",
+    label: "new",
+    sku: 12,
+    images: [
+      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-04.webp",
+      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-02.webp",
+      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-03.webp",
+      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml.webp",
+    ],
+
+    breadcrumbs: [
+      { id: 1, name: "Skincare", href: "#" },
+      { id: 2, name: "24K Pure Gold Collagen", href: "#" },
+    ],
+
+    description: `Ce sérum facial est enrichi en ingrédients éclaircissants et hydratants tels que l'arbutine pour atténuer efficacement la mélanine, favoriser la synthèse du collagène, combattre les signes visibles de vieillissement et hydrater la peau, la laissant lumineuse.`,
+    caractéristiques: [
+      `Le puissant pouvoir revitalisant de l'or actif 24 carats peut 
+      favoriser le métabolisme et lutter contre le vieillissement`,
+      `Hydrate, guérit les ridules ; lisse et raffermit la peau ; soin efficace ; redonne à la peau sa splendeur.`,
+      ` Peut rapidement pénétrer le derme, libérer des ions actifs d'or, améliorer l'absorption de la peau de 10 fois.`,
+      `Améliore les ridules, les ridules sèches, illumine uniformément la peau, revitalise et hydrate. `,
+      `Contient 7 types de combinaisons de peptides qui nourrissent la peau, éliminent les rides, rendent la peau plus lisse et améliorent son élasticité`,
+      `Contient des extraits de plantes tels que le lotus et le Wujiapi, ainsi que du collagène hydrolysé extrait du cartilage de saumon pour augmenter l'élasticité de la peau`,
+      `retenir l'eau et lutter contre les signes du vieillissement, aidant à retrouver une peau jeune. `,
+      `L'or pur 24 carats détoxifie, raffermit, éclaircit la peau et favorise le métabolisme.`,
+      "Les extraits de plantes marines en profondeur hydratent et raffermissent la peau.",
+    ],
+    usage: [
+      `Après avoir nettoyé la peau, prenez une quantité appropriée de sérum. Appliquez-le uniformément sur la peau et massez doucement jusqu'à absorption complète.`,
+      `Si vous avez une crème, appliquez une quantité suffisante pour conserver l'essence.`,
+      `Utilisez une fois le matin et une fois le soir.`,
+    ],
+    notes: [
+      `Veuillez tenir le produit hors de portée des enfants.`,
+      `À usage externe uniquement, évitez tout contact avec les yeux.`,
+      `Cessez toute utilisation si vous ressentez une quelconque gêne.`,
+    ],
+    reviews: [],
+    orders: [],
+  },
+  {
+    name: "Huile Essentielle AICHUN BEAUTY à l'Ail",
+    subtitle:
+      "pour l'élargissement et le raffermissement des hanches et des fesses, effet rapide de grosses fesses, contenance de 30 ml.",
+    price: 1200,
+    exPrice: 1800,
+    category: "skincare",
+    label: "new",
+    sku: 12,
+    images: [
+      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-04.webp",
+      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-02.webp",
+      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-03.webp",
+      "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml.webp",
+    ],
+
+    breadcrumbs: [
+      { id: 1, name: "Skincare", href: "#" },
+      { id: 2, name: "Huile Essentielle AICHUN BEAUTY à l'Ail", href: "#" },
+    ],
+
+    description: `Ce sérum facial est enrichi en ingrédients éclaircissants et hydratants tels que l'arbutine pour atténuer efficacement la mélanine, favoriser la synthèse du collagène, combattre les signes visibles de vieillissement et hydrater la peau, la laissant lumineuse.`,
+    caractéristiques: [
+      `Le puissant pouvoir revitalisant de l'or actif 24 carats peut 
+      favoriser le métabolisme et lutter contre le vieillissement`,
+      `Hydrate, guérit les ridules ; lisse et raffermit la peau ; soin efficace ; redonne à la peau sa splendeur.`,
+      ` Peut rapidement pénétrer le derme, libérer des ions actifs d'or, améliorer l'absorption de la peau de 10 fois.`,
+      `Améliore les ridules, les ridules sèches, illumine uniformément la peau, revitalise et hydrate. `,
+      `Contient 7 types de combinaisons de peptides qui nourrissent la peau, éliminent les rides, rendent la peau plus lisse et améliorent son élasticité`,
+      `Contient des extraits de plantes tels que le lotus et le Wujiapi, ainsi que du collagène hydrolysé extrait du cartilage de saumon pour augmenter l'élasticité de la peau`,
+      `retenir l'eau et lutter contre les signes du vieillissement, aidant à retrouver une peau jeune. `,
+      `L'or pur 24 carats détoxifie, raffermit, éclaircit la peau et favorise le métabolisme.`,
+      "Les extraits de plantes marines en profondeur hydratent et raffermissent la peau.",
+    ],
+    usage: [
+      `Après avoir nettoyé la peau, prenez une quantité appropriée de sérum. Appliquez-le uniformément sur la peau et massez doucement jusqu'à absorption complète.`,
+      `Si vous avez une crème, appliquez une quantité suffisante pour conserver l'essence.`,
+      `Utilisez une fois le matin et une fois le soir.`,
+    ],
+    notes: [
+      `Veuillez tenir le produit hors de portée des enfants.`,
+      `À usage externe uniquement, évitez tout contact avec les yeux.`,
+      `Cessez toute utilisation si vous ressentez une quelconque gêne.`,
+    ],
+    reviews: [],
+    orders: [],
+  },
+];

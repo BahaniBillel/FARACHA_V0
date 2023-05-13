@@ -1,6 +1,13 @@
 import React from "react";
+import { selectItems, selectTotal } from "../../redux/slices/basketSlice";
+import { useSelector } from "react-redux";
 
 function Checkout() {
+  const total = useSelector(selectTotal);
+  const items = useSelector(selectItems);
+
+  const HandleConfirmedOrders = async () => {};
+
   return (
     <div className="  flex  flex-col md:grid grid-cols-2  max-h-full w-full px-3 md:px-16 font-sans bg-fuchsia-100">
       <section className="flex flex-col items-center justify-center mt-10 py-10 col-span-1 order-2">
@@ -99,12 +106,13 @@ function Checkout() {
           <button
             className=" w-full py-3 text-white font-semibold bg-slate-900 
           text-xl hover:scale-95 transition-all ease-in-out duration-150"
+            onClick={HandleConfirmedOrders}
           >
             Confirmer la commande
           </button>
         </form>
       </section>
-      <section className="col-span-1 order-1"></section>
+      <section className="col-span-1 order-1">{items.length}</section>
     </div>
   );
 }
