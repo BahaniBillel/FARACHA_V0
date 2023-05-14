@@ -12,7 +12,7 @@ import promo6 from "../public/images/promo6.jpg";
 import dropped1 from "../public/images/productsImages/Crème-AICHUN-BEAUTY-à-la-papaye-pour-l'élargissement-poitrine.jpg";
 import dropped2 from "../public/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml.webp";
 import dropped3 from "../public/images/productsImages/Huile-Essentielle-AICHUN-BEAUTY-à-l'Ail-élargissement-fesses.jpeg";
-import dropped4 from "../public/images/productsImages/bella-beauty-serum-cheveaux-reparation-sans-sulfates-mauve.jpg";
+import dropped4 from "../public/images/productsImages/bella-beauty-serum-cheveaux-reparation-sans-sulfates-mauve-02.jpg";
 import dropped5 from "../public/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET.webp";
 import dropped6 from "../public/images/productsImages/parfum-scandal-100ml-rose.jpg";
 import dropped7 from "../public/images/productsImages/parfum-scandal-100ml-rouge.jpg";

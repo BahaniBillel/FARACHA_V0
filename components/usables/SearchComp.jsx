@@ -27,7 +27,7 @@ const SearchComp = () => {
 
     if (filteredProduct) {
       const productName = filteredProduct.name;
-      router.push(`/product/${productName}`);
+      router.push(`/listing/${productName}`);
       setSearchQuery(""); // Clear the search input
     } else {
       alert("Product not found");
@@ -54,7 +54,7 @@ const SearchComp = () => {
   const handleSuggestionClick = (product) => {
     setSearchQuery(product.name);
     setShowSuggestions(false);
-    router.push(`/product/${product.name}`);
+    router.push(`/listing/${product.name}`);
     setSearchQuery(""); // Clear the search input
   };
 

@@ -14,12 +14,11 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/slices/basketSlice";
 import { toast, ToastContainer } from "react-toastify";
-import { bindActionCreators } from "redux";
-import { basketActions } from "../../redux/slices/basketSlice";
 
 function Listing({ product }) {
   // Dispatching product to store
   const dispatch = useDispatch();
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const router = useRouter();
 
@@ -40,7 +39,7 @@ function Listing({ product }) {
     };
 
     // Retrieve the stock quantity from Firestore
-    const productRef = doc(db, "products", product.name); // Use product.id as the document ID
+    const productRef = doc(db, "products", product.name); // Use product.name as the document ID
     const productSnapshot = await getDoc(productRef);
     const stockQuantity = productSnapshot.data().sku; // Assuming the stock quantity field is named 'sku'
 
@@ -48,22 +47,25 @@ function Listing({ product }) {
 
     // Check if the stock quantity allows for adding the item to the basket
     if (stockQuantity > 0) {
-      // Dispatch the product to the store
-      dispatch(addToBasket(productData));
+      // Check if adding the item would exceed the stock quantity limit
+      if (stockQuantity - 1 > 0) {
+        // Dispatch the product to the store
+        dispatch(addToBasket(productData));
 
-      // Decrease the stock quantity in Firestore
+        // Disable the button if the quantity limit is reached
+        if (stockQuantity === 0) {
+          setIsButtonDisabled(true);
+        }
 
-      // await updateDoc(productRef, {
-      //   sku: stockQuantity - 1, // Decrease the stock quantity by 1
-      // }
-
-      // );
-
-      // Notify the user
-      notify(product.name);
+        // Notify the user
+        notify(product.name);
+      } else {
+        console.log("Product is out of stock");
+        // Show an error message or handle out-of-stock scenario
+      }
     } else {
-      // Show an error message or handle out-of-stock scenario
       console.log("Product is out of stock");
+      // Show an error message or handle out-of-stock scenario
     }
   };
 
@@ -233,11 +235,14 @@ function Listing({ product }) {
           </div>
 
           <button
-            className="mt-10 flex w-full items-center justify-center 
+            className={`mt-10 flex w-full items-center justify-center 
             rounded-md border border-transparent bg-slate-900 px-8 py-3 text-base
              font-medium text-white hover:bg-fuchsia-600 focus:outline-none focus:ring-2
-              focus:ring-fuchsia-500 focus:ring-offset-2"
+              focus:ring-fuchsia-500 focus:ring-offset-2 cursor-pointer ? ${
+                isButtonDisabled ? "disabled:bg-slate-400" : null
+              } `}
             onClick={() => addItemToBasket(product)}
+            disabled={isButtonDisabled} // Set the disabled attribute based on the state
           >
             Ajouter au Panier
           </button>

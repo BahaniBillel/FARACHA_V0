@@ -29,20 +29,13 @@ export const basketSlice = createSlice({
     incrementQuantity: (state, action) => {
       const item = state.items.find((item) => item.name === action.payload);
 
-      if (item) {
-        item.quantity++;
-        item.price = (item.price * item.quantity).toFixed(2);
-      }
-    },
-
-    incrementQuantity: (state, action) => {
-      const item = state.items.find((item) => item.name === action.payload);
-
-      if (item) {
+      if (item.quantity < item.sku) {
         const prevQuantity = item.quantity;
         item.quantity = item.quantity + 1;
         const priceIncrement = item.price / prevQuantity;
         item.price = item.price + priceIncrement; // Update the price
+      } else {
+        return;
       }
     },
     decrementQuantity: (state, action) => {
@@ -60,7 +53,7 @@ export const basketSlice = createSlice({
     removeFromBasket: (state, action) => {
       // find the item index inside the items basket
       const index = state.items.findIndex(
-        (basketItem) => basketItem.id === action.payload.id
+        (basketItem) => basketItem.name === action.payload.name
       );
 
       // create a new basket
@@ -128,3 +121,11 @@ export const selectLikes = (state) => state.basket.likes;
 export const selectHeartState = (state) => state.basket.heart;
 
 export default basketSlice.reducer;
+
+// Notifying the dispatched product
+const notify = (productName) => {
+  toast(`${productName} was added to basket`, {
+    position: toast.POSITION.BOTTOM_RIGHT,
+    className: "foo-bar text-xs font-light",
+  });
+};
