@@ -38,9 +38,9 @@ function Cart() {
         </div>
 
         <div className="md:w-3/12 bg-white rounded-sm p-3 shadow-sm order-1 md:order-2">
-          <p className="py-1 font-semibold text-sm uppercase">Basket Summary</p>
+          <p className="py-1 font-semibold text-sm uppercase">Total Panier</p>
           <div className="flex flex-rox space-x-3 py-5 border-t-[1px] border-solid border-lightGray">
-            <p>Sub-total ({items.length}) :</p>
+            <p>Sous-total ({items.length}) :</p>
             <div className="flex flex-grow"></div>
             <p className="font-semibold text-lg">
               {" "}
@@ -56,7 +56,7 @@ function Cart() {
               Delivery is free to Blida City.
             </p>
             <p className="text-xs py-3 font-semibold uppercase tracking-wider flex flex-row">
-              Taaj
+              Faracha
               <span className="text-greenPrimary italic uppercase flex flex-row">
                 <RocketLaunchIcon className="h-4" />
                 Express

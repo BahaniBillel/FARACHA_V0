@@ -16,27 +16,21 @@ import "react-toastify/dist/ReactToastify.css";
 function CheckoutProduct({
   name,
   images,
-
   description,
   productImage,
-  category,
-  exPrice,
-
-  label,
-
   price,
-  reviews,
   quantity,
-  subtitle,
 }) {
   const dispatch = useDispatch();
 
+  console.log(quantity, price);
+
   const increaseProduct = () => {
-    dispatch(incrementQuantity(name));
+    dispatch(incrementQuantity({ name, price }));
   };
 
   const decrementProduct = () => {
-    dispatch(decrementQuantity(name));
+    dispatch(decrementQuantity({ name, price }));
   };
 
   const removeItemFromBasket = () => {
@@ -76,7 +70,7 @@ function CheckoutProduct({
     });
     return total;
   };
-  console.log(images);
+
   return (
     <div
       className="grid grid-cols-5 gap-y-10  border-lightGray border-solid border mb-1 py-2 px-5 h-36 overflow-hidden bg-white cursor-pointer

@@ -14,7 +14,7 @@ export const basketSlice = createSlice({
         (item) => item.name === action.payload.name
       );
       if (itemExists) {
-        itemExists.quantity++;
+        itemExists.quantity;
       } else {
         state.items = [...state.items, { ...action.payload, quantity: 1 }];
       }
@@ -25,31 +25,33 @@ export const basketSlice = createSlice({
         localStorage.setItem("items", JSON.stringify(state.items));
       }
     },
-
     incrementQuantity: (state, action) => {
-      const item = state.items.find((item) => item.name === action.payload);
+      const { name, price } = action.payload;
+      const item = state.items.find((item) => item.name === name);
 
-      if (item.quantity < item.sku) {
+      if (item && item.quantity < item.sku) {
         const prevQuantity = item.quantity;
-        item.quantity = item.quantity + 1;
-        const priceIncrement = item.price / prevQuantity;
-        item.price = item.price + priceIncrement; // Update the price
+        item.quantity += 1;
+        const priceIncrement = price / prevQuantity;
+        item.price += priceIncrement;
       } else {
         return;
       }
     },
+
     decrementQuantity: (state, action) => {
-      const item = state.items.find((item) => item.name === action.payload);
+      const { name, price } = action.payload;
+      const item = state.items.find((item) => item.name === name);
+
       if (item.quantity === 1) {
-        const index = state.items.findIndex(
-          (item) => item.name === action.payload
-        );
+        const index = state.items.findIndex((item) => item.name === name);
         state.items.splice(index, 1);
       } else {
-        item.quantity--;
+        item.quantity -= 1;
         item.price -= item.price / (item.quantity + 1); // Update the price
       }
     },
+
     removeFromBasket: (state, action) => {
       // find the item index inside the items basket
       const index = state.items.findIndex(
