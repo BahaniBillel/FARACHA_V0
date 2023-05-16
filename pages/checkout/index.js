@@ -2,15 +2,21 @@ import React, { useEffect } from "react";
 import { selectItems, selectTotal } from "../../redux/slices/basketSlice";
 import { useSelector } from "react-redux";
 import CheckoutProduct from "../../components/usables/checkoutProduct";
-import { addDoc, collection, setDoc, doc } from "firebase/firestore";
+import { addDoc, collection, setDoc, doc, Timestamp } from "firebase/firestore";
 import { db } from "../../firebase";
+import { toast, ToastContainer } from "react-toastify";
+import { useRouter } from "next/router";
 
 function Checkout() {
-  const total = useSelector(selectTotal);
+  const subTotal = useSelector(selectTotal);
   const items = useSelector(selectItems);
   const [delivery, setDelivery] = React.useState(0);
+  const [wilaya, setWilaya] = React.useState("");
+  const [livraison, setLivraison] = React.useState(0);
 
-  const wilayaDeliveryPrice = [
+  const [order, setOrder] = React.useState({});
+
+  const wilayaDelivery = [
     {
       id: 1,
       name: "01-Algers",
@@ -28,12 +34,94 @@ function Checkout() {
     },
   ];
 
-  const condition = total ? delivery : 0;
-  const HandleOrder = async (e) => {
+  useEffect(() => {
+    const selectedWilaya = wilayaDelivery.find((w) => w.name === wilaya);
+    if (selectedWilaya) {
+      setLivraison(selectedWilaya.price);
+    } else {
+      setLivraison(0);
+    }
+  }, [wilaya]);
+
+  // const livraison = wilaya ? delivery : 0;
+  const total = Number(subTotal) + Number(livraison);
+
+  const HandleOrder = async (e, total, delivery) => {
     e.preventDefault();
-    await setDoc(doc(db, "orders", "client B"), {
-      name: "hi",
+
+    const fullname = document.getElementById("fullname").value;
+    const commune = document.getElementById("commune").value;
+    const address = document.getElementById("address").value;
+    const email = document.getElementById("email").value;
+    const mobile = document.getElementById("mobile").value;
+    const notes = document.getElementById("notes").value;
+    const wilaya = document.getElementById("wilaya").value;
+    const livraison = document.getElementById("livraison").value;
+
+    // Check if required fields are empty
+    if (!fullname || !commune || !address || !mobile || !wilaya) {
+      // Handle the fallback logic (e.g., show an error message)
+      // console.log("Please fill in all required fields");
+      notify();
+      return;
+    }
+
+    const timestamp = Date.now(); // Generate a timestamp
+    const uniqueFullname = `${fullname}_${timestamp}`; // Append timestamp to fullname
+
+    const orderItems = items.map((item) => ({
+      name: item.name,
+      quantity: item.quantity,
+    }));
+
+    const newOrder = {
+      name: fullname,
+      price: subTotal,
+      wilaya,
+      livraison,
+      total,
+      orderItems,
+      date: Timestamp.now(),
+      commune: commune,
+      address: address,
+      email: email,
+      mobile: mobile,
+      notes: notes,
+    };
+
+    try {
+      // Store the order details in the database
+      await setDoc(doc(db, "orders", uniqueFullname), newOrder);
+      setOrder(newOrder);
+
+      // Clear the form fields after submission
+      document.getElementById("fullname").value = "";
+      document.getElementById("commune").value = "";
+      document.getElementById("address").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("mobile").value = "";
+      document.getElementById("notes").value = "";
+      document.getElementById("wilaya").value = "";
+      document.getElementById("livraison").value = "";
+
+      // Redirect to the home page
+      const router = useRouter();
+      router.push("/");
+    } catch (error) {
+      console.error("Error submitting order:", error);
+    }
+  };
+
+  // Notifying the dispatched product
+  const notify = () => {
+    toast.info(` "Veuillez remplir tous les champs obligatoires"`, {
+      position: toast.POSITION.TOP_LEFT,
+      className: "foo-bar text-xs font-light",
     });
+  };
+
+  const HandleWilayaChange = (e) => {
+    setWilaya(e.target.value);
   };
 
   return (
@@ -81,11 +169,11 @@ function Checkout() {
                   name="wilaya"
                   className="input w-full"
                   required
-                  onChange={(e) => setDelivery(e.target.value)}
+                  onChange={HandleWilayaChange}
                 >
-                  {wilayaDeliveryPrice.map((wilaya) => {
+                  {wilayaDelivery.map((wilaya) => {
                     return (
-                      <option key={wilaya.id} value={wilaya.price}>
+                      <option key={wilaya.id} value={wilaya.name}>
                         {wilaya.name}
                       </option>
                     );
@@ -108,6 +196,34 @@ function Checkout() {
                   className="input w-full "
                   required
                 />
+              </div>
+            </div>
+            {/* Livraison */}
+            <div className=" flex-row items-center space-x-3 w-full hidden">
+              <div className="w-1/2">
+                <label
+                  for="price"
+                  className=" flex flex-row justify-center items-center whitespace-pre "
+                >
+                  Livraison
+                  <label className="flex flex-grow"></label>
+                  <label className="">السعر</label>
+                </label>
+                <select
+                  id="livraison"
+                  name="livraison"
+                  className="input w-full"
+                  disabled
+                  onChange={(e) => setDelivery(e.target.value)}
+                >
+                  {wilayaDelivery
+                    .filter((wilayaObj) => wilayaObj.name === wilaya)
+                    .map((wilayaObj) => (
+                      <option key={wilayaObj.id} value={wilayaObj.price}>
+                        {wilayaObj.price}
+                      </option>
+                    ))}
+                </select>
               </div>
             </div>
 
@@ -181,14 +297,16 @@ function Checkout() {
             <button
               className=" w-full py-3 text-white font-semibold bg-slate-900 
           text-xl hover:scale-95 transition-all ease-in-out duration-150 rounded-md"
-              onClick={HandleOrder}
+              onClick={(e) => HandleOrder(e, total, delivery)}
             >
               Confirmer la commande
             </button>
           </form>
         </section>
         <section className="col-span-1 order-2 bg-white px-5 py-5 rounded-md ">
-          <p className="font-bold text-xl py-2">Vous avez Commandé :</p>
+          <p className="font-bold text-xl py-2">
+            {items.length ? "Vous avez Commandé :" : "There is no items"}
+          </p>
           <div>
             {items?.map((item, i) => (
               <CheckoutProduct
@@ -205,20 +323,26 @@ function Checkout() {
 
           <div className="my-5 pt-5 border-t flex flex-col flex-nowrap space-y-5">
             <div className="flex flex-row flex-nowrap items-center w-full ">
-              <p>Sous-Total</p>
+              <p>Sous-Total </p>
               <p className="flex flex-grow"></p>
-              <p>{total}</p>
+              <p>
+                {subTotal} <span>DA</span>
+              </p>
             </div>
             <div className="flex flex-row flex-nowrap items-center w-full ">
               <p>Livraison</p>
               <p className="flex flex-grow"></p>
-              <p>{condition}</p>
+              <p>
+                {items.length ? livraison : null} <span>DA</span>
+              </p>
             </div>
 
             <div className=" font-bold border-t pt-3 flex flex-row flex-nowrap items-center w-full ">
               <p>Total </p>
               <p className="flex flex-grow"></p>
-              <p>{Number(total) + Number(condition)}</p>
+              <p>
+                {items.length ? total : null} <span>DA</span>
+              </p>
             </div>
           </div>
         </section>
