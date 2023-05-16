@@ -15,7 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function CheckoutProduct({
   name,
-  images,
+  isCheckout,
   description,
   productImage,
   price,
@@ -92,7 +92,7 @@ function CheckoutProduct({
         >
           <TrashIcon className="h-5 text-greenSecondary mr-1 group-hover:text-greenSecondary" />
           <p className="text-greenSecondary text-sm tracking-wide group-hover:text-greenSecondary">
-            Remove
+            Supprimer
           </p>
         </div>
       </div>
@@ -100,25 +100,26 @@ function CheckoutProduct({
       {/* middle section */}
       <div className="col-span-3 mx-5 flex flex-col">
         <p className="font-bold ">{name}</p>
-
-        <div className="">
-          <StarRatings
-            rating={2}
-            starRatedColor="gold"
-            changeRating={3}
-            numberOfStars={5}
-            name="rating"
-            starDimension="16px"
-          />
-        </div>
+        {isCheckout ? null : (
+          <div className="">
+            <StarRatings
+              rating={2}
+              starRatedColor="gold"
+              changeRating={3}
+              numberOfStars={5}
+              name="rating"
+              starDimension="16px"
+            />
+          </div>
+        )}
         <p className="font-light text-xs md:text-sm mt-2 line-clamp-3">
           {description}
         </p>
       </div>
       {/* right section */}
       <div className="col-span-1  flex flex-col items-end  ">
-        <div className="font-semibold text-sm">{price} DA</div>
-        <div className="flex flex-row space-x-3 items-center mt-5">
+        <div className="font-semibold text-sm whitespace-pre">{price} DA</div>
+        <div className="flex flex-row space-x-3 items-center mt-5 whitespace-pre">
           <button
             className="bg-greenSecondary py-1 px-3 rounded-sm text-black hover:scale-95 transition-shadow duration-150"
             onClick={decrementProduct}
