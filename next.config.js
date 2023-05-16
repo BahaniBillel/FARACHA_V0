@@ -10,7 +10,7 @@ const nextConfig = {
         pathname: "/products/**",
       },
     ],
-    domains: ["faracha-b3825.appspot.com", ""],
+    domains: ["faracha-b3825.appspot.com", "tailwindui.com"],
   },
 };
 

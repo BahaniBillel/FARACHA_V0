@@ -45,8 +45,6 @@ export default function Home() {
         />
 
         <SliderCardTN />
-        <LayoutOne />
-        <ProductOverviewOne />
       </main>
     </div>
   );

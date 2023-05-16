@@ -8,6 +8,8 @@ import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
 
 function Checkout() {
+  // Redirect to the home page
+  const router = useRouter();
   const subTotal = useSelector(selectTotal);
   const items = useSelector(selectItems);
   const [delivery, setDelivery] = React.useState(0);
@@ -61,7 +63,7 @@ function Checkout() {
     // Check if required fields are empty
     if (!fullname || !commune || !address || !mobile || !wilaya) {
       // Handle the fallback logic (e.g., show an error message)
-      // console.log("Please fill in all required fields");
+
       notify();
       return;
     }
@@ -104,8 +106,6 @@ function Checkout() {
       document.getElementById("wilaya").value = "";
       document.getElementById("livraison").value = "";
 
-      // Redirect to the home page
-      const router = useRouter();
       router.push("/");
     } catch (error) {
       console.error("Error submitting order:", error);
