@@ -6,8 +6,11 @@ import { addDoc, collection, setDoc, doc, Timestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { resetItems } from "../../redux/slices/basketSlice";
 
 function Checkout() {
+  const dispatch = useDispatch();
   // Redirect to the home page
   const router = useRouter();
   const subTotal = useSelector(selectTotal);
@@ -105,8 +108,10 @@ function Checkout() {
       document.getElementById("notes").value = "";
       document.getElementById("wilaya").value = "";
       document.getElementById("livraison").value = "";
-
-      router.push("/");
+      // Dispatch the resetItems action to empty the items array
+      dispatch(resetItems());
+      // redirect to thank you page
+      router.push("/thankyou");
     } catch (error) {
       console.error("Error submitting order:", error);
     }

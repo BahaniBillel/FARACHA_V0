@@ -6,6 +6,7 @@ import { store, persistor } from "../redux/store";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PersistGate } from "redux-persist/integration/react";
+import Footer from "../components/usables/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <Component {...pageProps} />
         <BottomNavigationBar />
+        <Footer />
         <ToastContainer />
       </PersistGate>
     </Provider>

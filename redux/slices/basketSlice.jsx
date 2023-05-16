@@ -75,6 +75,10 @@ export const basketSlice = createSlice({
 
       state.items = newBasket;
     },
+    resetItems: (state) => {
+      state.items = [];
+    },
+
     incrementLikes: (state, action) => {
       state.likes = [...state.likes, action.payload];
     },
@@ -112,6 +116,7 @@ export const {
   decrementLikes,
   incrementQuantity,
   decrementQuantity,
+  resetItems,
 } = basketSlice.actions;
 
 // this is  how we pull items from the global store

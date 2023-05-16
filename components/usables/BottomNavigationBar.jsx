@@ -7,7 +7,11 @@ import { IoMdPeople } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import Link from "next/link";
 
+import { useSelector } from "react-redux";
+import { selectItems, selectLikes } from "../../redux/slices/basketSlice";
+
 function BottomNavigationBar() {
+  const items = useSelector(selectItems);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -48,7 +52,12 @@ function BottomNavigationBar() {
       <Link href="/cart">
         <div className="flex flex-col text-xs font-light items-center justify-center cursor-pointer">
           <HiOutlineShoppingBag className="h-6 w-6" />
-          <p className="text-gray-600">Shop</p>
+          <p className="text-gray-600 relative">
+            Shop
+            <span className=" absolute -top-4 left-2/4 text-white text-xs font-bold   z-10  bg-red-600 py-1 px-2 rounded-full">
+              {items ? items.length : 0}
+            </span>
+          </p>
         </div>
       </Link>
       <div className="flex flex-col text-xs font-light items-center justify-center cursor-pointer ">
