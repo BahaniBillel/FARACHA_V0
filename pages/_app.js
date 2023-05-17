@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Header from "../components/header/Header";
 import BottomNavigationBar from "../components/usables/BottomNavigationBar";
 import "../styles/globals.css";
@@ -9,13 +10,16 @@ import { PersistGate } from "redux-persist/integration/react";
 import Footer from "../components/usables/Footer";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const hideHeaderFooter =
+    router.pathname === "/thankyou" || router.pathname === "/login";
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Header />
+        {!hideHeaderFooter && <Header />}
         <Component {...pageProps} />
         <BottomNavigationBar />
-        <Footer />
+        {!hideHeaderFooter && <Footer />}
         <ToastContainer />
       </PersistGate>
     </Provider>
