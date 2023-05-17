@@ -49,7 +49,11 @@ function Checkout() {
   ];
 
   useEffect(() => {
-    const selectedWilaya = wilayaDelivery.find((w) => w.name === wilaya);
+    let selectedWilaya;
+    if (wilayaDelivery) {
+      selectedWilaya = wilayaDelivery.find((w) => w.name === wilaya);
+    }
+
     if (selectedWilaya) {
       setLivraison(selectedWilaya.price);
     } else {
