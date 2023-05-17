@@ -49,7 +49,7 @@ function Checkout() {
   ];
 
   useEffect(() => {
-    let selectedWilaya;
+    let selectedWilaya = null;
     if (wilayaDelivery) {
       selectedWilaya = wilayaDelivery.find((w) => w.name === wilaya);
     }
