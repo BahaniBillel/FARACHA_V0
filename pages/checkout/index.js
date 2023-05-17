@@ -2,7 +2,16 @@ import React, { useEffect } from "react";
 import { selectItems, selectTotal } from "../../redux/slices/basketSlice";
 import { useSelector } from "react-redux";
 import CheckoutProduct from "../../components/usables/checkoutProduct";
-import { addDoc, collection, setDoc, doc, Timestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  setDoc,
+  doc,
+  Timestamp,
+  updateDoc,
+  getDocs,
+  getDoc,
+} from "firebase/firestore";
 import { db } from "../../firebase";
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
@@ -48,6 +57,19 @@ function Checkout() {
     }
   }, [wilaya]);
 
+  // Getting products from firestore
+  const [products, setProducts] = React.useState([]);
+  useEffect(() => {
+    const getProducts = async () => {
+      const querySnapshot = await getDocs(collection(db, "products"));
+      const Allproducts = querySnapshot.docs.map((doc) => doc.data());
+      setProducts(Allproducts);
+    };
+    console.log(products);
+    getProducts();
+  }, []);
+
+  console.log(products);
   // const livraison = wilaya ? delivery : 0;
   const total = Number(subTotal) + Number(livraison);
 
@@ -98,6 +120,34 @@ function Checkout() {
       // Store the order details in the database
       await setDoc(doc(db, "orders", uniqueFullname), newOrder);
       setOrder(newOrder);
+      // Decreasing stock from firebase
+      for (const item of orderItems) {
+        const { name, quantity } = item;
+
+        // Retrieve the document from Firestore
+        const itemDocRef = doc(db, "products", name);
+        let itemDoc;
+
+        try {
+          itemDoc = await getDoc(itemDocRef);
+        } catch (error) {
+          console.error("Error retrieving document:", error);
+          continue; // Skip to the next iteration if there's an error
+        }
+
+        if (itemDoc.exists()) {
+          // Subtract the quantity from the sku value
+          const sku = itemDoc.data().sku - quantity;
+
+          console.log(quantity, itemDoc.data().sku);
+
+          // Update the Firestore document with the new sku value
+          await updateDoc(itemDoc.ref, { sku });
+        } else {
+          console.error("Document does not exist:", name);
+          continue; // Skip to the next iteration if the document doesn't exist
+        }
+      }
 
       // Clear the form fields after submission
       document.getElementById("fullname").value = "";

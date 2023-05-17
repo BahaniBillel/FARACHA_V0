@@ -19,6 +19,7 @@ function Listing({ product }) {
   // Dispatching product to store
   const dispatch = useDispatch();
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const [stock, setStock] = useState();
 
   const router = useRouter();
 
@@ -43,6 +44,8 @@ function Listing({ product }) {
     const productSnapshot = await getDoc(productRef);
     const stockQuantity = productSnapshot.data().sku; // Assuming the stock quantity field is named 'sku'
 
+    // To enable the span under button when the stock is out
+    setStock(stockQuantity);
     console.log(stockQuantity);
 
     // Check if the stock quantity allows for adding the item to the basket
@@ -246,6 +249,12 @@ function Listing({ product }) {
           >
             Ajouter au Panier
           </button>
+          {stock === 0 ? (
+            <span className="text-sm text-yellow-200  bg-black font-bold">
+              Produit en rupture de stock, il sera bientôt réapprovisionné.
+              Veuillez vérifier dans 2 jours
+            </span>
+          ) : null}
         </div>
 
         <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
