@@ -49,17 +49,14 @@ function Checkout() {
   ];
 
   useEffect(() => {
-    let selectedWilaya = null;
-    if (wilayaDelivery) {
-      selectedWilaya = wilayaDelivery.find((w) => w.name === wilaya);
-    }
+    const selectedWilaya = wilayaDelivery.find((w) => w.name === wilaya);
 
     if (selectedWilaya) {
       setLivraison(selectedWilaya.price);
     } else {
       setLivraison(0);
     }
-  }, [wilaya, selectedWilaya]);
+  }, [wilaya, wilayaDelivery]);
 
   // Getting products from firestore
   const [products, setProducts] = React.useState([]);
