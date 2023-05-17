@@ -55,7 +55,7 @@ function Checkout() {
     } else {
       setLivraison(0);
     }
-  }, [wilaya]);
+  }, [wilaya, selectedWilaya]);
 
   // Getting products from firestore
   const [products, setProducts] = React.useState([]);
@@ -67,7 +67,7 @@ function Checkout() {
     };
     console.log(products);
     getProducts();
-  }, []);
+  }, [products]);
 
   console.log(products);
   // const livraison = wilaya ? delivery : 0;

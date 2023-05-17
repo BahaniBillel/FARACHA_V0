@@ -14,7 +14,7 @@ const ThankYouPage = () => {
     }, 5000);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [router]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -27,7 +27,8 @@ const ThankYouPage = () => {
             Votre commande a été soumise avec succès.
           </p>
           <p className="text-lg">
-            Vous serez redirigé(e) vers la page d'accueil dans un instant...
+            Vous serez redirigé(e) vers la page d&#39; accueil dans un
+            instant...
           </p>
         </div>
       </div>
