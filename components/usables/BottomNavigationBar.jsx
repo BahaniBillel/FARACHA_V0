@@ -6,6 +6,7 @@ import { MdOutlineLocalOffer } from "react-icons/md";
 import { IoMdPeople } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import Link from "next/link";
+import { TbBrandBlogger } from "react-icons/tb";
 
 import { useSelector } from "react-redux";
 import { selectItems, selectLikes } from "../../redux/slices/basketSlice";
@@ -64,10 +65,13 @@ function BottomNavigationBar() {
         <GrUserFemale className="h-6 w-6" />
         <p className="text-gray-600">Me</p>
       </div>
-      <div className="flex flex-col text-xs font-light items-center justify-center cursor-pointer">
-        <IoMdPeople className="h-6 w-6" />
-        <p className="text-gray-600">Community</p>
-      </div>
+
+      <Link href="/blogs/12">
+        <div className="flex flex-col text-xs font-light items-center justify-center cursor-pointer">
+          <TbBrandBlogger className="h-6 w-6" />
+          <p className="text-gray-600">Blogs</p>
+        </div>
+      </Link>
       <div className="flex flex-col text-xs font-light items-center justify-center cursor-pointer">
         <CiShop className="h-6 w-6" />
         <p className="text-gray-600">Store</p>
