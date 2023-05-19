@@ -11,11 +11,19 @@ function Product01({
   price,
   feature,
   featureColor,
-  QuickViewHandler,
+  // QuickViewHandler,
   link,
+  fill,
+  width,
+  length,
 }) {
   return (
-    <div className="w-48 h-80 group  border hover:shadow-xl p-2 relative rounded-md hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer">
+    <div
+      className={` ${"w-48" || width}  ${
+        "h-80" || length
+      }  group  border hover: shadow-xl p-2 relative rounded-md 
+    hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer`}
+    >
       <span
         className={`absolute left-2 top-1 text-xs font-light px-3 py-0 ${featureColor}  bg-black text-white rounded-xl`}
       >
@@ -23,28 +31,29 @@ function Product01({
       </span>
       <Link href={`/listing/${link}`}>
         <div className="h-48 overflow-hidden">
-          <Image src={image} alt={title} />
+          <Image src={image} alt={title} fill={fill} />
         </div>
 
         <div
           className="flex flex-col items-start h-24 flex-nowrap absolute bottom-4 left-0 px-2 text-left
       "
         >
-          <p className="font-bold text-lg whitespace-pre pt-1">{price} DA</p>
           <h3 className="text-xs uppercase font-semibold ">{title}</h3>
           <p className="text-xs font-light font-sans line-clamp-3 ">
             {subtitle}
           </p>
+          <p className="flex flex-grow"></p>
+          <p className="font-bold text-base whitespace-pre pt-1">{price} DA</p>
         </div>
       </Link>
-      <p
+      {/* <p
         className="absolute  -bottom-1/2 transition-all duration-300 ease-in-out 
       group-hover:bottom-1/2 left-1/2 -translate-x-1/2 bg-black/60 text-white 
       uppercase py-1 px-5 text-sm rounded-sm whitespace-pre"
         onClick={QuickViewHandler}
       >
         Quick look
-      </p>
+      </p> */}
       <div className="absolute right-2 top-2 z-40 ">
         <HeartIcon className="h-6 w-6 text-gray-300 " />
       </div>

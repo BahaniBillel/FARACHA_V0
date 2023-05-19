@@ -69,7 +69,7 @@ const ProductKeenSliderSM = ({ title, haveLabel, data, bottomLine }) => {
                     subtitle={product.subtitle}
                     price={product.price}
                     feature={haveLabel ? product.feature : null}
-                    QuickViewHandler={ShowModel}
+                    // QuickViewHandler={ShowModel}
                     link={product.title}
                   />
                 </div>
@@ -99,14 +99,14 @@ const ProductKeenSliderSM = ({ title, haveLabel, data, bottomLine }) => {
           </>
         )}
       </div>
-      {showModal ? (
+      {/* {showModal ? (
         <Modal
           CloseModal={CloseModalHandler}
           picture={ProductImage}
           brandname="Comas"
           title="Bodyskin crema to soften the touch."
         />
-      ) : null}
+      ) : null} */}
     </div>
   );
 };

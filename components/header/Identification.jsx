@@ -3,6 +3,8 @@ import { SiHomeassistantcommunitystore } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
 import { CiLogin } from "react-icons/ci";
 import { BsHeart, BsBasket, BsSearch } from "react-icons/bs";
+import { TbBrandBlogger } from "react-icons/tb";
+
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/images/logo.png";
@@ -27,6 +29,14 @@ function Identification() {
       {/* buttons */}
       <div className="hidden lg:flex flex-row  md:space-x-5 col-span-1">
         <ul className="flex flex-row space-x-4 md:space-x-8 ">
+          <Link href="/blogs/12">
+            <li className="flex flex-row items-center ">
+              <TbBrandBlogger className="w-6 h-6 text-gray-800" />
+              <p className="hidden md:flex text-sm font-light ml-1 flex-col">
+                Blogs
+              </p>
+            </li>
+          </Link>
           <Link href="#">
             <li className="flex flex-row items-center ">
               <BsHeart className="w-6 h-6 text-gray-800" />
@@ -45,7 +55,7 @@ function Identification() {
             </div>
           </Link>
 
-          <Link href="/admin">
+          <Link href="/login">
             <li className="flex flex-row items-center cursor-pointer">
               <CiLogin className="w-6 h-6 text-gray-800" />
               <p className="hidden md:flex text-sm font-light ml-1 flex-col">

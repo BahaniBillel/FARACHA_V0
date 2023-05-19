@@ -11,11 +11,16 @@ function Product04({
   feature,
   featureColor,
   QuickViewHandler,
+  fill,
+  width,
+  length,
 }) {
   return (
     <div
-      className="w-48 h-72 group  border hover:shadow-xl p-2 relative 
-    rounded-md hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer overflow-hidden"
+      className={`  ${width || "w-48"}  ${
+        length || "h-72"
+      }  group  border hover:shadow-xl p-2 relative 
+    rounded-md hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer overflow-hidden`}
     >
       <span
         className={`absolute left-2 top-1 text-xs font-light px-3 py-0 ${featureColor}  bg-black text-white rounded-xl`}
@@ -23,7 +28,7 @@ function Product04({
         {feature}
       </span>
       <div className="h-48">
-        <Image src={image} alt={title} />
+        <Image src={image} alt={title} fill={fill} />
       </div>
 
       <div

@@ -55,6 +55,7 @@ function Admin() {
       ],
       reviews: [],
       orders: [],
+      similar: ["skincare"],
     },
     {
       id: 2,
@@ -105,6 +106,7 @@ function Admin() {
       ],
       reviews: [],
       orders: [],
+      similar: ["skincare"],
     },
     {
       id: 3,
@@ -155,6 +157,7 @@ function Admin() {
       ],
       reviews: [],
       orders: [],
+      similar: ["makeup"],
     },
     {
       id: 4,
@@ -205,6 +208,7 @@ function Admin() {
       ],
       reviews: [],
       orders: [],
+      similar: ["perfum"],
     },
   ];
 

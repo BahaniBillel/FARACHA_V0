@@ -14,8 +14,10 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/slices/basketSlice";
 import { toast, ToastContainer } from "react-toastify";
+import Product04 from "../../components/products/Product04";
+import Link from "next/link";
 
-function Listing({ product }) {
+function Listing({ product, products }) {
   // Dispatching product to store
   const dispatch = useDispatch();
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -100,6 +102,15 @@ function Listing({ product }) {
     subtitle,
     usage,
   } = product;
+
+  // similar products
+  const similarProducts = [product.category]; // Similar array to filter by
+
+  const filteredArray = products.filter((item) =>
+    item.similar.some((category) => similarProducts.includes(category))
+  );
+
+  console.log(filteredArray);
   return (
     <div className="pt-6">
       {/* Breadcrumbs */}
@@ -321,6 +332,24 @@ function Listing({ product }) {
           </div>
         </div>
       </div>
+      {/* similar products */}
+      <div className="w-full bg-amber-200 py-5 px-2 md:px-16 font-semibold">
+        <h2 className="text-2xl mb-4">Produits Similaires :</h2>
+        <div className="  grid grid-cols-2 gap-5 md:grid-cols-5 grid-flow-row">
+          {filteredArray.map(({ id, productImage, title, name }) => (
+            <Link href={`/listing/${name}`}>
+              <Product04
+                key={id}
+                image={productImage}
+                title={title}
+                fill={true}
+                length="h-56"
+                width="w-36"
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -356,9 +385,12 @@ export async function getStaticProps({ params }) {
   }
 
   const product = productSnapshot.data();
+  // getting reference to products collection
+  const querySnapshot = await getDocs(collection(db, "products"));
+  const products = querySnapshot.docs.map((doc) => doc.data());
 
   return {
-    props: { product },
+    props: { product, products },
     revalidate: 1, // optional, allows for incremental static regeneration
   };
 }
