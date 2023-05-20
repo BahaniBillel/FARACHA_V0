@@ -336,10 +336,10 @@ function Listing({ product, products }) {
       <div className="w-full bg-amber-200 py-5 px-2 md:px-16 font-semibold">
         <h2 className="text-2xl mb-4">Produits Similaires :</h2>
         <div className="  grid grid-cols-2 gap-5 md:grid-cols-5 grid-flow-row">
-          {filteredArray.map(({ id, productImage, title, name }) => (
+          {filteredArray.map(({ id, productImage, title, name }, i) => (
             <Link href={`/listing/${name}`}>
               <Product04
-                key={id}
+                key={i}
                 image={productImage}
                 title={title}
                 fill={true}
