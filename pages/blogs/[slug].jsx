@@ -35,7 +35,7 @@ function OneBlog({ blog, blogs }) {
   return (
     <div className="font-sans px-10 md:px-28 pt-20 flex flex-col items-center">
       <div className="flex flex-col justify-center items-center space-y-3 md:px-44">
-        <p className="text-gray-700 text-sm font-sans ">Featured</p>
+        <p className="text-gray-600 text-sm font-sans ">Featured</p>
         <h1 className=" text-2xl md:text-3xl leading-relaxed font-semibold text-center">
           Faracha and TikTok Partner to Pioneer New Program for Rising Beauty
           Brands and Content Creators
