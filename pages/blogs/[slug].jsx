@@ -38,7 +38,7 @@ function OneBlog({ blog, blogs }) {
         <p className="text-gray-600 text-sm font-sans ">Featured</p>
         <h1 className=" text-2xl md:text-3xl leading-relaxed font-semibold text-center">
           Faracha and TikTok Partner to Pioneer New Program for Rising Beauty
-          Brands and Content Creators
+          Brands and Content Creators,so son.
         </h1>
       </div>
       {/* blog info and social links */}

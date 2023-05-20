@@ -343,7 +343,7 @@ function Listing({ product, products }) {
                 image={productImage}
                 title={title}
                 fill={true}
-                length="h-56"
+                length="h-48"
                 width="w-36"
               />
             </Link>
