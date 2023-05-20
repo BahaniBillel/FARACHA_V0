@@ -44,7 +44,7 @@ function OneBlog({ blog, blogs }) {
       {/* blog info and social links */}
 
       <div className="my-5 text-xs flex flex-row space-x-5">
-        <p>13 MARS 2023</p>
+        <p>13 MARS 2033</p>
         <div className="flex flex-row space-x-2">
           <Link
             href="https://www.facebook.com/profile.php?id=100092565812907&mibextid=ZbWKwL"
