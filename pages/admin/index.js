@@ -10,7 +10,7 @@ function Admin() {
       id: 1,
       name: "Guanjing 24K Pure Gold Collagen 30ml",
       subtitle:
-        "pour l'élargissement et le raffermissement de la poitrine, efficace en 3 jours, contenance de 100 ml",
+        "Enrichi d'ingrédients nourrissants et de feuilles d'or pour une peau radieuse et réparée.",
       productImage:
         "/images/productsImages/Guanjing-24K-Pure-Gold-Collagen-30ml-04.webp",
       price: 1400,
@@ -26,8 +26,8 @@ function Admin() {
       ],
 
       breadcrumbs: [
-        { id: 1, name: "Skincare", href: "#" },
-        { id: 2, name: "24K Pure Gold Collagen", href: "#" },
+        { id: 1, name: "Faracha", href: "/" },
+        { id: 2, name: "Skincare", href: "/skincare" },
       ],
 
       description: `Ce sérum facial est enrichi en ingrédients éclaircissants et hydratants tels que l'arbutine pour atténuer efficacement la mélanine, favoriser la synthèse du collagène, combattre les signes visibles de vieillissement et hydrater la peau, la laissant lumineuse.`,
@@ -61,12 +61,12 @@ function Admin() {
       id: 2,
       name: "Huile Essentielle AICHUN BEAUTY à l'Ail",
       subtitle:
-        "pour l'élargissement et le raffermissement de la poitrine, efficace en 3 jours, contenance de 100 ml",
+        "Aichun Beauty est une crème naturelle à base d'huile essentielle d'ail pour raffermir et agrandir les fesses.",
       productImage:
         "/images/productsImages/Huile-Essentielle-AICHUN-BEAUTY-à-l'Ail-élargissement-fesses.jpeg",
       price: 1300,
       exPrice: 1800,
-      category: "skincare",
+      category: "body&bath",
       label: "new",
       sku: 12,
       images: [
@@ -77,36 +77,25 @@ function Admin() {
       ],
 
       breadcrumbs: [
-        { id: 1, name: "Skincare", href: "#" },
-        { id: 2, name: "24K Pure Gold Collagen", href: "#" },
+        { id: 1, name: "Faracha", href: "/" },
+        { id: 2, name: "skincare", href: "/skincare" },
       ],
 
-      description: `Ce sérum facial est enrichi en ingrédients éclaircissants et hydratants tels que l'arbutine pour atténuer efficacement la mélanine, favoriser la synthèse du collagène, combattre les signes visibles de vieillissement et hydrater la peau, la laissant lumineuse.`,
-      features: [
-        `Le puissant pouvoir revitalisant de l'or actif 24 carats peut 
-      favoriser le métabolisme et lutter contre le vieillissement`,
-        `Hydrate, guérit les ridules ; lisse et raffermit la peau ; soin efficace ; redonne à la peau sa splendeur.`,
-        ` Peut rapidement pénétrer le derme, libérer des ions actifs d'or, améliorer l'absorption de la peau de 10 fois.`,
-        `Améliore les ridules, les ridules sèches, illumine uniformément la peau, revitalise et hydrate. `,
-        `Contient 7 types de combinaisons de peptides qui nourrissent la peau, éliminent les rides, rendent la peau plus lisse et améliorent son élasticité`,
-        `Contient des extraits de plantes tels que le lotus et le Wujiapi, ainsi que du collagène hydrolysé extrait du cartilage de saumon pour augmenter l'élasticité de la peau`,
-        `retenir l'eau et lutter contre les signes du vieillissement, aidant à retrouver une peau jeune. `,
-        `L'or pur 24 carats détoxifie, raffermit, éclaircit la peau et favorise le métabolisme.`,
-        "Les extraits de plantes marines en profondeur hydratent et raffermissent la peau.",
-      ],
+      description: `L'huile essentielle de rose musquée est une solution efficace pour aider à raffermir les fesses, réduire les vergetures et maintenir l'équilibre naturel de la peau. Elle est extraite des graines de l'églantier.`,
+      features: [],
       usage: [
-        `Après avoir nettoyé la peau, prenez une quantité appropriée de sérum. Appliquez-le uniformément sur la peau et massez doucement jusqu'à absorption complète.`,
-        `Si vous avez une crème, appliquez une quantité suffisante pour conserver l'essence.`,
-        `Utilisez une fois le matin et une fois le soir.`,
+        `AUtilisez une serviette chaude pour chauffer la hanche pendant 1 à 2 minutes`,
+        `Appliquez uniformément le produit sur la fesse.`,
+        `Effectuez un massage avec une main pour améliorer la hanche, en alternant les mains environ 10 fois.`,
+        `Soulevez la hanche de bas en haut en alternant les mains, environ 10 fois.`,
+        `Effectuez un massage en utilisant le pouce et les deux mains en alternance, environ 10 fois.`,
+        `Massez la hanche en effectuant des mouvements en forme de cercle avec les deux mains, environ 10 fois.`,
+        `Soulevez la hanche en utilisant simultanément les deux mains, en les dirigeant vers l'intérieur et vers le haut, environ 10 fois.`,
       ],
-      notes: [
-        `Veuillez tenir le produit hors de portée des enfants.`,
-        `À usage externe uniquement, évitez tout contact avec les yeux.`,
-        `Cessez toute utilisation si vous ressentez une quelconque gêne.`,
-      ],
+      notes: [],
       reviews: [],
       orders: [],
-      similar: ["skincare"],
+      similar: ["body&bath"],
     },
     {
       id: 3,

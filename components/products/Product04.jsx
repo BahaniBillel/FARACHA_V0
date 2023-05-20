@@ -23,7 +23,7 @@ function Product04({
     rounded-md hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer overflow-hidden`}
     >
       <span
-        className={`absolute left-2 top-1 text-xs font-light px-3 py-0 ${featureColor}  bg-black text-white rounded-xl`}
+        className={`absolute -left-1 top-1 text-xs font-light px-3 py-1 ${featureColor}  bg-black text-white rounded-r-xl`}
       >
         {feature}
       </span>

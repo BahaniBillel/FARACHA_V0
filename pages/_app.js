@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "../components/header/Header";
 import BottomNavigationBar from "../components/usables/BottomNavigationBar";
@@ -18,6 +19,17 @@ function MyApp({ Component, pageProps }) {
       <PersistGate loading={null} persistor={persistor}>
         {!hideHeaderFooter && <Header />}
         <Component {...pageProps} />
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta
+            name="description"
+            content="Découvrez les dernières nouveautés en matière de beauté chez Faracha ! Explorez une sélection inégalée de maquillage, soins de la peau, 
+        produits capillaires, parfums et bien plus encore, provenant de marques classiques et émergentes."
+          />
+        </Head>
         <BottomNavigationBar />
         {!hideHeaderFooter && <Footer />}
         <ToastContainer />

@@ -271,31 +271,35 @@ function Listing({ product, products }) {
         <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
           {/* Description and details */}
           <div>
-            <h3 className="sr-only">Description</h3>
+            <h3 className="text-xl font-medium text-gray-900">Description</h3>
 
             <div className="space-y-6">
               <p className="text-base text-gray-900">{product.description}</p>
             </div>
           </div>
           {/* Carateristiques */}
-          <div className="mt-10">
-            <h3 className="text-sm font-medium text-gray-900">
-              Caractéristiques
-            </h3>
 
-            <div className="mt-4">
-              <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                {features.map((feature) => (
-                  <li key={feature} className="text-gray-400">
-                    <span className="text-gray-600">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+          {features.length ? (
+            <div className="mt-10">
+              <h3 className="text-xl font-medium text-gray-900">
+                Caractéristiques
+              </h3>
+
+              <div className="mt-4">
+                <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+                  {features.map((feature) => (
+                    <li key={feature} className="text-gray-400">
+                      <span className="text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          ) : null}
+
           {/* Usage */}
           <div className="mt-10">
-            <h3 className="text-sm font-medium text-gray-900">Utilisation:</h3>
+            <h3 className="text-xl font-medium text-gray-900">Utilisation:</h3>
 
             <div className="mt-4">
               <ol
@@ -313,23 +317,26 @@ function Listing({ product, products }) {
           </div>
 
           {/* notes */}
-          <div className="mt-10">
-            <h3 className="text-sm font-medium text-gray-900">Notes:</h3>
 
-            <div className="mt-4">
-              <ol
-                role="list"
-                className="list-disc space-y-2 pl-4 text-sm"
-                type="1"
-              >
-                {notes.map((note) => (
-                  <li key={note} className="text-gray-400">
-                    <span className="text-gray-600">{note}</span>
-                  </li>
-                ))}
-              </ol>
+          {notes.length ? (
+            <div className="mt-10">
+              <h3 className="text-xl font-medium text-gray-900">Notes:</h3>
+
+              <div className="mt-4">
+                <ol
+                  role="list"
+                  className="list-disc space-y-2 pl-4 text-sm"
+                  type="1"
+                >
+                  {notes.map((note) => (
+                    <li key={note} className="text-gray-400">
+                      <span className="text-gray-600">{note}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
       {/* similar products */}

@@ -24,11 +24,13 @@ function Product01({
       }  group  border hover: shadow-xl p-2 relative rounded-md 
     hover:-translate-y-1 transition-all duration-150 ease-in-out cursor-pointer`}
     >
-      <span
-        className={`absolute left-2 top-1 text-xs font-light px-3 py-0 ${featureColor}  bg-black text-white rounded-xl`}
-      >
-        {feature}
-      </span>
+      {feature ? (
+        <span
+          className={`absolute -left-1 top-1 text-xs font-light px-3 py-1 ${featureColor}  bg-black text-white rounded-r-xl`}
+        >
+          {feature}
+        </span>
+      ) : null}
       <Link href={`/listing/${link}`}>
         <div className="h-48 overflow-hidden">
           <Image src={image} alt={title} fill={fill} />
