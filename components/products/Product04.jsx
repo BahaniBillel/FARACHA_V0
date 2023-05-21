@@ -35,7 +35,9 @@ function Product04({
         className="flex flex-col items-start h-20 flex-nowrap absolute bottom-4 left-0 px-2 text-left
       "
       >
-        <p className="font-bold text-lg whitespace-pre">{price} DA</p>
+        {price ? (
+          <p className="font-bold text-lg whitespace-pre">{price} DA</p>
+        ) : null}
         <h3 className="text-xs uppercase font-semibold whitespace-pre">
           {title}
         </h3>
@@ -49,10 +51,15 @@ function Product04({
       >
         Quick look
       </h1>
-      <div className="absolute -right-14 -top-10 z-40 bg-black w-40 h-20 rotate-45"></div>
-      <p className="text-white absolute right-2 top-2 z-40 font-semibold text-lg">
-        # 01
-      </p>
+
+      {feature ? (
+        <>
+          <div className="absolute -right-14 -top-10 z-40 bg-black w-40 h-20 rotate-45"></div>
+          <p className="text-white absolute right-2 top-2 z-40 font-semibold text-lg">
+            {feature}
+          </p>
+        </>
+      ) : null}
     </div>
   );
 }
