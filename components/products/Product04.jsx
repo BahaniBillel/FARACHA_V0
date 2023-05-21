@@ -43,14 +43,14 @@ function Product04({
         </h3>
         <p className="text-sm font-light font-sans ">{subtitle}</p>
       </div>
-      <h1
+      {/* <h1
         className="absolute  -bottom-1/2 transition-all duration-300 ease-in-out 
       group-hover:bottom-1/2 left-1/2 -translate-x-1/2 bg-black/60 text-white 
       uppercase py-1 px-5 text-sm rounded-sm whitespace-pre"
         onClick={QuickViewHandler}
       >
         Quick look
-      </h1>
+      </h1> */}
 
       {feature ? (
         <>
