@@ -27,7 +27,7 @@ function Admin() {
 
       breadcrumbs: [
         { id: 1, name: "Faracha", href: "/" },
-        { id: 2, name: "Skincare", href: "/skincare" },
+        { id: 2, name: "Soin de Peau", href: "/skincare" },
       ],
 
       description: `Ce sérum facial est enrichi en ingrédients éclaircissants et hydratants tels que l'arbutine pour atténuer efficacement la mélanine, favoriser la synthèse du collagène, combattre les signes visibles de vieillissement et hydrater la peau, la laissant lumineuse.`,
@@ -66,7 +66,7 @@ function Admin() {
         "/images/productsImages/Huile-Essentielle-AICHUN-BEAUTY-à-l'Ail-élargissement-fesses.jpeg",
       price: 1300,
       exPrice: 1800,
-      category: "body&bath",
+      category: "bodybath",
       label: "new",
       sku: 12,
       images: [
@@ -78,7 +78,7 @@ function Admin() {
 
       breadcrumbs: [
         { id: 1, name: "Faracha", href: "/" },
-        { id: 2, name: "skincare", href: "/skincare" },
+        { id: 2, name: "Corps & Bain", href: "/bodybath" },
       ],
 
       description: `L'huile essentielle de rose musquée est une solution efficace pour aider à raffermir les fesses, réduire les vergetures et maintenir l'équilibre naturel de la peau. Elle est extraite des graines de l'églantier.`,
@@ -117,8 +117,8 @@ function Admin() {
       ],
 
       breadcrumbs: [
-        { id: 1, name: "Skincare", href: "#" },
-        { id: 2, name: "24K Pure Gold Collagen", href: "#" },
+        { id: 1, name: "Faracha", href: "#" },
+        { id: 2, name: "Soin de Peau", href: "/skincare" },
       ],
 
       description: ``,
@@ -148,8 +148,8 @@ function Admin() {
       ],
 
       breadcrumbs: [
-        { id: 1, name: "Hair", href: "#" },
-        { id: 2, name: "BELLA BEAUTY-HAIR REPAIR", href: "#" },
+        { id: 1, name: "Faracha", href: "#" },
+        { id: 2, name: "Cheveux", href: "/hair" },
       ],
 
       description: ``,
@@ -165,21 +165,24 @@ function Admin() {
       name: "dr rashel green tea coffret",
       subtitle: "",
       productImage: "/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET.webp",
-      price: 10000,
-      exPrice: 8500,
+      price: 8500,
+      exPrice: 10000,
       category: "skincare",
       label: "new",
-      sku: 12,
+      sku: 1,
       images: [
+        "/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET-02.webp",
+        "/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET-03.webp",
+        "/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET-04.webp",
         "/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET.webp",
-        "/images/productsImages/bella-beauty-serum-cheveaux-reparation-sans-sulfates-jaune.jpg",
-        "/images/productsImages/bella-beauty-serum-cheveaux-reparation-sans-sulfates-jaune.jpg",
-        "/images/productsImages/bella-beauty-serum-cheveaux-reparation-sans-sulfates-jaune.jpg",
+        "/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET-05.webp",
+        "/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET-06.webp",
+        "/images/productsImages/DR-RASHEL-GREEN-TEA-COFFRET-07.webp",
       ],
 
       breadcrumbs: [
-        { id: 1, name: "Skincare", href: "#" },
-        { id: 2, name: "dr rashel green tea coffret", href: "#" },
+        { id: 1, name: "Faracha", href: "#" },
+        { id: 2, name: "soin de peau", href: "/skincare" },
       ],
 
       description: ``,

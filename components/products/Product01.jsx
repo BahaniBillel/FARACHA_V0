@@ -1,8 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-
+import { useDispatch } from "react-redux";
 import { HeartIcon } from "@heroicons/react/24/solid";
+import { incrementLikes, decrementLikes } from "../../redux/slices/basketSlice";
 
 function Product01({
   image,
@@ -17,6 +18,26 @@ function Product01({
   width,
   length,
 }) {
+  const dispatch = useDispatch();
+  const [heart, setHeart] = useState(false);
+  const HandleHeartLikes = () => {
+    setHeart(!heart);
+
+    const product = {
+      image,
+      title,
+      subtitle,
+      price,
+      feature,
+      featureColor,
+    };
+    if (!heart) {
+      dispatch(incrementLikes(product));
+    } else {
+      dispatch(decrementLikes({ name }));
+    }
+  };
+
   return (
     <div
       className={` ${"w-48" || width}  ${
@@ -57,7 +78,13 @@ function Product01({
         Quick look
       </p> */}
       <div className="absolute right-2 top-2 z-40 ">
-        <HeartIcon className="h-6 w-6 text-gray-300 " />
+        <button onClick={HandleHeartLikes}>
+          {heart ? (
+            <HeartIcon className="h-6 text-red-500 " />
+          ) : (
+            <HeartIcon className="h-6 text-gray-200 " />
+          )}
+        </button>
       </div>
     </div>
   );

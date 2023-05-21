@@ -29,7 +29,7 @@ function Identification() {
       {/* buttons */}
       <div className="hidden lg:flex flex-row  md:space-x-5 col-span-1">
         <ul className="flex flex-row space-x-4 md:space-x-8 ">
-          <Link href="/blogs/12">
+          <Link href="/blogs/12" className="hidden">
             <li className="flex flex-row items-center ">
               <TbBrandBlogger className="w-6 h-6 text-gray-800" />
               <p className="hidden md:flex text-sm font-light ml-1 flex-col">
@@ -37,9 +37,12 @@ function Identification() {
               </p>
             </li>
           </Link>
-          <Link href="#">
-            <li className="flex flex-row items-center ">
+          <Link href="/likes">
+            <li className="flex flex-row items-center relative">
               <BsHeart className="w-6 h-6 text-gray-800" />
+              <span className=" absolute -top-3 left-1/4 text-white text-xs font-bold   z-10  bg-red-600 py-1 px-2 rounded-full">
+                {likes ? likes.length : 0}
+              </span>
               <p className="hidden md:flex text-sm font-light ml-1 flex-col">
                 Likes
               </p>
