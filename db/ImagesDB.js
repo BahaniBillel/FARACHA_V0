@@ -150,7 +150,7 @@ const justDropped = [
   {
     image: dropped6,
     price: 1400,
-    title: "Parfum Scandal 100ml(copie)",
+    title: "Parfum Scandal 100ml-Rose-(copie)",
     subtitle: "Small but mighty picks to pocket right now",
     cta: "SHOP NOW",
     backgroundColor: "bg-amber-400",
@@ -159,7 +159,7 @@ const justDropped = [
   {
     image: dropped7,
     price: 1400,
-    title: "Parfum Scandal 100ml(copie)",
+    title: "Parfum Scandal 100ml-Rouge-(copie)",
     subtitle: "Small but mighty picks to pocket right now",
     cta: "SHOP NOW",
     backgroundColor: "bg-amber-400",
@@ -168,7 +168,7 @@ const justDropped = [
   {
     image: dropped8,
     price: 1400,
-    title: "Parfum Scandal 100ml(copie)",
+    title: "Parfum Scandal 100ml-Orange-(copie)",
     subtitle: "Small but mighty picks to pocket right now",
     cta: "SHOP NOW",
     backgroundColor: "bg-amber-400",

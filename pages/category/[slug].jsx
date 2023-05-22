@@ -5,10 +5,15 @@ import { db } from "../../firebase";
 import CategoryFilters from "../../components/usables/CategoryFilters";
 import Product04 from "../../components/products/Product04";
 import Link from "next/link";
+import ReactPixel from "react-facebook-pixel";
 
 function Category({ products }) {
   const router = useRouter();
   const page = router.query;
+
+  React.useEffect(() => {
+    ReactPixel.pageView();
+  }, []);
 
   console.log(products);
 
