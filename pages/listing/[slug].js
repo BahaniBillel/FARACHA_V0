@@ -16,6 +16,7 @@ import { addToBasket } from "../../redux/slices/basketSlice";
 import { toast, ToastContainer } from "react-toastify";
 import Product04 from "../../components/products/Product04";
 import Link from "next/link";
+import * as fbq from "../../lib/fpixel";
 
 function Listing({ product, products }) {
   // Dispatching product to store
@@ -36,6 +37,7 @@ function Listing({ product, products }) {
   // ...
 
   const addItemToBasket = async (product) => {
+    fbq.event("AddToCart");
     const productData = {
       ...product,
       quantity: 1, // Set the initial quantity to 1
