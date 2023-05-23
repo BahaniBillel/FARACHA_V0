@@ -27,6 +27,7 @@ function Category({ products }) {
         </Link>
       </div>
     ));
+
   return (
     <div>
       <CategoryFilters data={renderProducts} />

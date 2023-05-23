@@ -37,7 +37,6 @@ function Listing({ product, products }) {
   // ...
 
   const addItemToBasket = async (product) => {
-    fbq.event("AddToCart");
     const productData = {
       ...product,
       quantity: 1, // Set the initial quantity to 1
@@ -74,6 +73,7 @@ function Listing({ product, products }) {
       console.log("Product is out of stock");
       // Show an error message or handle out-of-stock scenario
     }
+    fbq.event("AddToCart");
   };
 
   // ...

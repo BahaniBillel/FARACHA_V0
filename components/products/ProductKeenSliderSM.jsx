@@ -51,7 +51,7 @@ const ProductKeenSliderSM = ({ title, haveLabel, data, bottomLine }) => {
   };
 
   return (
-    <div className=" md:px-32 ">
+    <div className=" md:px-32 mt-5 ">
       <div
         className={`navigation-wrapper   ${
           bottomLine ? "border-b" : null
@@ -59,16 +59,16 @@ const ProductKeenSliderSM = ({ title, haveLabel, data, bottomLine }) => {
       >
         <div>
           <div className="">
-            <h2 className="px-2 mb-5 font-semibold text-xl ">{title}</h2>
+            <h2 className="px-2 mb-2 font-semibold text-xl ">{title}</h2>
             <div ref={sliderRef} className="keen-slider">
               {data.map((product) => (
-                <div className="keen-slider__slide py-10 " key={product.image}>
+                <div className="keen-slider__slide py-5 " key={product.image}>
                   <Product01
                     image={product.image}
                     title={product.title}
                     subtitle={product.subtitle}
                     price={product.price}
-                    feature={haveLabel ? product.feature : null}
+                    feature={haveLabel ? product.label : null}
                     // QuickViewHandler={ShowModel}
                     link={product.title}
                   />

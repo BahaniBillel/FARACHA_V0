@@ -30,19 +30,24 @@ export default function Home() {
 
       <main className="font-sans">
         <Hero />
-        <ProductKeenSliderSM title="Chosen for you" data={justDropped} />
         <ProductKeenSliderSM
-          title="Just Dropped"
+          title="Nouvel Arrivage"
+          data={justDropped}
+          haveLabel={true}
+        />
+        <ProductKeenSliderSM
+          title="Best Selling"
           haveLabel={true}
           data={justDropped}
         />
-        <ProductKeenSlider title="Beauty Offers" data={beautyOffersData} />
-        <ProductKeenShowcase title="Showcase" data={beautyOffersData} />
-        <ProductKeenSliderTN
+        {/* <ProductKeenSlider title="Beauty Offers" data={beautyOffersData} />
+        <ProductKeenShowcase title="Showcase" data={beautyOffersData} /> */}
+        {/* <ProductKeenSliderTN
           title="Selling fast"
           data={justDropped}
           bottomLine={true}
-        />
+          haveLabel={true}
+        /> */}
 
         <SliderCardTN />
       </main>
