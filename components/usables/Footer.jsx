@@ -12,11 +12,13 @@ function Footer() {
         <div className="  w-1/3 mb-10 ">
           <Image src={Logo} alt="logo" />
         </div>
-        <p className="font-extralight text-sm text-gray-400 pr-5">
-          Découvrez notre boutique en ligne spécialisée dans les soins de beauté
-          pour femmes. Des produits de qualité supérieure pour sublimer votre
-          apparence et prendre soin de vous. Achetez les dernières tendances en
-          maquillage, soins de la peau, parfums et bien plus encore.
+        <p className="font-extralight text-sm text-gray-400 pr-5 font-bold ">
+          يُعد موقع هايلة وجهتك الأولى لتسوق جديد المنتجات المميزة الخاصة
+          بالمرأة وكل العائلة بأفضل الأسعار، مع توفير تجربة ممتعة وسهلة لكم في
+          التسوق وشراء مختلف السلع وطلبها عبر الأنترنت، تصلكم مباشرة إلى باب
+          منزلكم أو مقر عملكم والدفع نقدا عند الإستلام مع ضمان جودة عالية
+          للمنتجات والسلع. موقع التسوق المفضل للعائلة الجزائرية مع أكثر من 20
+          ألف منتج مميز وجديد مع ضمان جودة الخدمة قبل وبعد البيع
         </p>
 
         <Link href={`/about`} className="hidden">

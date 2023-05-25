@@ -291,6 +291,69 @@ function Admin() {
       orders: [],
       similar: ["perfum"],
     },
+    {
+      id: 9,
+      name: "ONE STEP HAIR DRYER AND STYLER | مجفف ومصفف الشعر",
+      subtitle: "",
+      productImage: "/images/productsImages/one-step-hair-dryer-styler-07.jpg",
+      price: 3500,
+      exPrice: "",
+      category: "hair",
+      label: "Chevaux",
+      new: true,
+      sku: 12,
+      images: [
+        "/images/productsImages/one-step-hair-dryer-styler-05.jpg",
+        "/images/productsImages/one-step-hair-dryer-styler-04.jpg",
+        "/images/productsImages/one-step-hair-dryer-styler-02.jpg",
+        "/images/productsImages/one-step-hair-dryer-styler-03.jpg",
+      ],
+
+      breadcrumbs: [
+        { id: 1, name: "Faracha", href: "#" },
+        { id: 2, name: "Chevaux", href: "/hair" },
+      ],
+
+      description: ``,
+      features: [],
+      usage: [],
+      notes: [],
+      reviews: [],
+      orders: [],
+      similar: ["hair"],
+    },
+    {
+      id: 30,
+      name: "Pack Curvy | رفع وشد الصدر و الأرداف",
+      subtitle: "",
+      productImage:
+        "/images/productsImages/pack-curvy-creme-poitrine-huile-fesse.jpg",
+      price: 2100,
+      exPrice: "",
+      category: "packs",
+      label: "Pack Curvy",
+      new: true,
+      sku: 12,
+      images: [
+        "/images/productsImages/pack-curvy-creme-poitrine-huile-fesse.jpg",
+        "/images/productsImages/pack-curvy-creme-poitrine-huile-fesse-01.jpg",
+        "/images/productsImages/pack-curvy-creme-poitrine-huile-fesse-02.jpg",
+        "/images/productsImages/pack-curvy-creme-poitrine-huile-fesse.jpg",
+      ],
+
+      breadcrumbs: [
+        { id: 1, name: "Faracha", href: "#" },
+        { id: 2, name: "Packs", href: "/packs" },
+      ],
+
+      description: ``,
+      features: [],
+      usage: [],
+      notes: [],
+      reviews: [],
+      orders: [],
+      similar: ["packs"],
+    },
   ];
 
   const uploadData = async () => {

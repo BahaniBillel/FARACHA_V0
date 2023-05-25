@@ -20,6 +20,7 @@ import dropped8 from "../public/images/productsImages/parfum-scandal-100ml-orang
 import dropped9 from "../public/images/productsImages/Guanjing-batonnet-argile-masque-vert.jpg";
 import dropped10 from "../public/images/productsImages/IMTINANE-Graisse-àl'Ail-créme-traitement-caplilaire-250ml.jpg";
 import dropped11 from "../public/images/productsImages/IMTINANE-Graisse-àl'Ail-créme-traitement-caplilaire-500ml.jpg";
+import dropped12 from "../public/images/productsImages/one-step-hair-dryer-styler-06.jpg";
 
 const beautyOffersData = [
   {
@@ -198,6 +199,16 @@ const justDropped = [
     image: dropped11,
     price: 1700,
     title: "IMTINANE Graisse à l'Ail-500ml-",
+    subtitle: "Créme de traitement capilaire.",
+    cta: "SHOP NOW",
+    backgroundColor: "bg-fushia-200",
+    feature: "new",
+  },
+
+  {
+    image: dropped12,
+    price: 3500,
+    title: "ONE STEP HAIR DRYER AND STYLER | مجفف ومصفف الشعر",
     subtitle: "Créme de traitement capilaire.",
     cta: "SHOP NOW",
     backgroundColor: "bg-fushia-200",
