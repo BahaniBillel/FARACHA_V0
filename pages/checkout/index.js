@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { selectItems, selectTotal } from "../../redux/slices/basketSlice";
 import { useSelector } from "react-redux";
 import CheckoutProduct from "../../components/usables/checkoutProduct";
@@ -48,18 +48,14 @@ function Checkout() {
     },
   ];
 
-  useEffect(() => {
-    let selectedWilaya = null;
-    if (wilayaDelivery) {
-      selectedWilaya = wilayaDelivery.find((w) => w.name === wilaya);
-    }
+  const [selectedWilaya, setSelectedWilaya] = React.useState(null);
 
-    if (selectedWilaya) {
-      setLivraison(selectedWilaya.price);
-    } else {
-      setLivraison(0);
+  useEffect(() => {
+    if (wilayaDelivery) {
+      const foundWilaya = wilayaDelivery.find((w) => w.name === wilaya);
+      setSelectedWilaya(foundWilaya);
     }
-  }, [wilaya, selectedWilaya]);
+  }, [wilaya, wilayaDelivery]);
 
   // Getting products from firestore
   const [products, setProducts] = React.useState([]);
